@@ -120,6 +120,9 @@ function emptyParagraph() {
 
 /* ─── Table helpers ──────────────────────────────────────────────────── */
 
+// Page: 8.5in = 12240 DXA, margins 1in each = 1440 DXA each, usable = 9360 DXA
+const PAGE_WIDTH_DXA = 9360
+
 const TABLE_BORDERS = {
   top: { style: BorderStyle.SINGLE, size: 1, color: 'cccccc' },
   bottom: { style: BorderStyle.SINGLE, size: 1, color: 'cccccc' },
@@ -127,9 +130,11 @@ const TABLE_BORDERS = {
   right: { style: BorderStyle.SINGLE, size: 1, color: 'cccccc' },
 }
 
+// width is a percentage (e.g. 15 = 15%), converted to DXA
 function headerCell(text, shading = COLORS.emerald, width) {
+  const dxa = width ? Math.round((width / 100) * PAGE_WIDTH_DXA) : undefined
   return new TableCell({
-    width: width ? { size: width * 50, type: WidthType.PERCENTAGE } : undefined,
+    width: dxa ? { size: dxa, type: WidthType.DXA } : undefined,
     shading: { type: ShadingType.SOLID, color: shading },
     borders: TABLE_BORDERS,
     children: [
@@ -150,8 +155,9 @@ function headerCell(text, shading = COLORS.emerald, width) {
 }
 
 function textCell(text, shading, width) {
+  const dxa = width ? Math.round((width / 100) * PAGE_WIDTH_DXA) : undefined
   return new TableCell({
-    width: width ? { size: width * 50, type: WidthType.PERCENTAGE } : undefined,
+    width: dxa ? { size: dxa, type: WidthType.DXA } : undefined,
     shading: shading
       ? { type: ShadingType.SOLID, color: shading }
       : undefined,
@@ -280,7 +286,7 @@ function buildTierSection() {
       'All organizational data is classified into one of four tiers based on the potential impact of unauthorized disclosure:'
     ),
     new Table({
-      width: { size: 5000, type: WidthType.PERCENTAGE },
+      width: { size: PAGE_WIDTH_DXA, type: WidthType.DXA },
       rows,
     }),
     emptyParagraph(),
@@ -349,7 +355,7 @@ function buildInventorySection(ws) {
     ]
 
     sections.push(
-      new Table({ width: { size: 5000, type: WidthType.PERCENTAGE }, rows })
+      new Table({ width: { size: PAGE_WIDTH_DXA, type: WidthType.DXA }, rows })
     )
     sections.push(emptyParagraph())
   }
@@ -390,7 +396,7 @@ function buildHandlingSection() {
         new TableRow({
           children: [
             new TableCell({
-              width: { size: 20, type: WidthType.PERCENTAGE },
+              width: { size: Math.round(0.20 * PAGE_WIDTH_DXA), type: WidthType.DXA },
               borders: TABLE_BORDERS,
               shading: { type: ShadingType.SOLID, color: COLORS.stoneLt },
               children: [
@@ -413,7 +419,7 @@ function buildHandlingSection() {
   ]
 
   sections.push(
-    new Table({ width: { size: 5000, type: WidthType.PERCENTAGE }, rows })
+    new Table({ width: { size: PAGE_WIDTH_DXA, type: WidthType.DXA }, rows })
   )
   sections.push(pageBreak())
   return sections

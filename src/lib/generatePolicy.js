@@ -130,6 +130,11 @@ const TABLE_BORDERS = {
   right: { style: BorderStyle.SINGLE, size: 1, color: 'cccccc' },
 }
 
+// Convert percentage array to DXA array for Table columnWidths
+function colWidths(pcts) {
+  return pcts.map(p => Math.round((p / 100) * PAGE_WIDTH_DXA))
+}
+
 // width is a percentage (e.g. 15 = 15%), converted to DXA
 function headerCell(text, shading = COLORS.emerald, width) {
   const dxa = width ? Math.round((width / 100) * PAGE_WIDTH_DXA) : undefined
@@ -287,6 +292,7 @@ function buildTierSection() {
     ),
     new Table({
       width: { size: PAGE_WIDTH_DXA, type: WidthType.DXA },
+      columnWidths: colWidths([15, 15, 40, 15, 15]),
       rows,
     }),
     emptyParagraph(),
@@ -355,7 +361,7 @@ function buildInventorySection(ws) {
     ]
 
     sections.push(
-      new Table({ width: { size: PAGE_WIDTH_DXA, type: WidthType.DXA }, rows })
+      new Table({ width: { size: PAGE_WIDTH_DXA, type: WidthType.DXA }, columnWidths: colWidths([50, 20, 30]), rows })
     )
     sections.push(emptyParagraph())
   }
@@ -419,7 +425,7 @@ function buildHandlingSection() {
   ]
 
   sections.push(
-    new Table({ width: { size: PAGE_WIDTH_DXA, type: WidthType.DXA }, rows })
+    new Table({ width: { size: PAGE_WIDTH_DXA, type: WidthType.DXA }, columnWidths: colWidths([20, 20, 20, 20, 20]), rows })
   )
   sections.push(pageBreak())
   return sections

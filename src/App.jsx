@@ -6,6 +6,7 @@ import HandlingMatrix from './pages/HandlingMatrix'
 import WorkspaceGuide from './pages/WorkspaceGuide'
 import DecisionTree from './pages/DecisionTree'
 import Wizard from './pages/Wizard'
+import M365Guide from './pages/M365Guide'
 
 const navLinks = [
   { to: '/', label: 'Home' },
@@ -13,6 +14,7 @@ const navLinks = [
   { to: '/guide/data-types', label: 'Data Types' },
   { to: '/guide/handling', label: 'Handling' },
   { to: '/guide/workspace', label: 'Google Workspace' },
+  { to: '/guide/m365', label: 'Microsoft 365' },
   { to: '/decision-tree', label: 'Decision Tree' },
   { to: '/wizard', label: 'Policy Wizard' },
 ]
@@ -89,10 +91,12 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/guide" element={<Navigate to="/guide/tiers" replace />} />
+          <Route path="/handling-matrix" element={<Navigate to="/guide/handling" replace />} />
           <Route path="/guide/tiers" element={<TierOverview />} />
           <Route path="/guide/data-types" element={<DataTypeBrowser />} />
           <Route path="/guide/handling" element={<HandlingMatrix />} />
           <Route path="/guide/workspace" element={<WorkspaceGuide />} />
+          <Route path="/guide/m365" element={<M365Guide />} />
           <Route path="/decision-tree" element={<DecisionTree />} />
           <Route path="/wizard" element={<Wizard />} />
         </Routes>

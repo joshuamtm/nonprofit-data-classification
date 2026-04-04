@@ -129,7 +129,7 @@ const TABLE_BORDERS = {
 
 function headerCell(text, shading = COLORS.emerald, width) {
   return new TableCell({
-    width: width ? { size: width, type: WidthType.PERCENTAGE } : undefined,
+    width: width ? { size: width * 50, type: WidthType.PERCENTAGE } : undefined,
     shading: { type: ShadingType.SOLID, color: shading },
     borders: TABLE_BORDERS,
     children: [
@@ -151,7 +151,7 @@ function headerCell(text, shading = COLORS.emerald, width) {
 
 function textCell(text, shading, width) {
   return new TableCell({
-    width: width ? { size: width, type: WidthType.PERCENTAGE } : undefined,
+    width: width ? { size: width * 50, type: WidthType.PERCENTAGE } : undefined,
     shading: shading
       ? { type: ShadingType.SOLID, color: shading }
       : undefined,
@@ -280,7 +280,7 @@ function buildTierSection() {
       'All organizational data is classified into one of four tiers based on the potential impact of unauthorized disclosure:'
     ),
     new Table({
-      width: { size: 100, type: WidthType.PERCENTAGE },
+      width: { size: 5000, type: WidthType.PERCENTAGE },
       rows,
     }),
     emptyParagraph(),
@@ -349,7 +349,7 @@ function buildInventorySection(ws) {
     ]
 
     sections.push(
-      new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows })
+      new Table({ width: { size: 5000, type: WidthType.PERCENTAGE }, rows })
     )
     sections.push(emptyParagraph())
   }
@@ -413,7 +413,7 @@ function buildHandlingSection() {
   ]
 
   sections.push(
-    new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows })
+    new Table({ width: { size: 5000, type: WidthType.PERCENTAGE }, rows })
   )
   sections.push(pageBreak())
   return sections

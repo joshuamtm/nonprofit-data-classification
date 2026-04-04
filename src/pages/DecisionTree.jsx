@@ -343,13 +343,13 @@ export default function DecisionTree() {
             <div className="flex gap-3">
               <button
                 onClick={() => handleAnswer('yes')}
-                className="flex-1 py-3 px-6 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl transition-colors cursor-pointer text-sm"
+                className="flex-1 py-3 px-6 bg-white border-2 border-stone-300 hover:border-emerald-500 hover:bg-emerald-50 text-stone-700 hover:text-emerald-700 font-semibold rounded-xl transition-colors cursor-pointer text-sm"
               >
                 Yes
               </button>
               <button
                 onClick={() => handleAnswer('no')}
-                className="flex-1 py-3 px-6 bg-stone-100 hover:bg-stone-200 text-stone-700 font-semibold rounded-xl transition-colors cursor-pointer text-sm"
+                className="flex-1 py-3 px-6 bg-white border-2 border-stone-300 hover:border-stone-500 hover:bg-stone-50 text-stone-700 font-semibold rounded-xl transition-colors cursor-pointer text-sm"
               >
                 No
               </button>

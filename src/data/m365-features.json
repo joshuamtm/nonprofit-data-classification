@@ -1,0 +1,241 @@
+{
+  "tiers": [
+    {
+      "id": "businessBasic",
+      "name": "Business Basic (Donated)",
+      "equivalent": "Business Basic",
+      "pricePerUser": "$0",
+      "nonprofitNote": "Up to 300 donated licenses via Microsoft for Nonprofits",
+      "userCap": 300,
+      "features": {
+        "dlp": { "available": false, "label": "Not available", "detail": "Purview DLP requires Business Premium or higher" },
+        "sensitivityLabels": { "available": false, "label": "Not available", "detail": "Manual sensitivity labels require Business Premium or higher" },
+        "autoLabeling": { "available": false, "label": "Not available", "detail": "Auto-labeling policies require E5" },
+        "sharingControls": { "available": true, "label": "Available", "detail": "Admin-level SharePoint/OneDrive external sharing controls — restrict who can share outside the org" },
+        "domainRestrictions": { "available": true, "label": "Available", "detail": "Domain allowlist/blocklist for external sharing in SharePoint admin center" },
+        "sitePermissions": { "available": true, "label": "Available", "detail": "Per-site external sharing restrictions configurable in SharePoint admin center" },
+        "securityGroups": { "available": true, "label": "Available", "detail": "Microsoft 365 Groups and Security Groups for access control" },
+        "conditionalAccess": { "available": false, "label": "Not available", "detail": "Conditional Access requires Entra ID P1, included in Business Premium or higher" },
+        "ome": { "available": false, "label": "Not available", "detail": "Office Message Encryption requires Business Premium or higher" },
+        "irm": { "available": false, "label": "Not available", "detail": "Azure Rights Management / IRM requires Business Premium or higher" },
+        "irmAutoApply": { "available": false, "label": "Not available", "detail": "Auto-apply IRM via DLP requires E5" },
+        "ediscovery": { "available": false, "label": "Limited", "detail": "Basic content search only — no case management, legal hold, or export capabilities" },
+        "intune": { "available": false, "label": "Not available", "detail": "Intune device management requires Business Premium or higher" },
+        "securityCenter": { "available": false, "label": "Not available", "detail": "Microsoft 365 Security Center / Defender requires Business Premium or higher" },
+        "smime": { "available": false, "label": "Not available", "detail": "S/MIME configuration requires Business Premium or higher" }
+      },
+      "recommendations": [
+        "Configure SharePoint external sharing to 'Only people in your organization' as the default",
+        "Set up domain allowlists for trusted partner organizations in SharePoint admin center",
+        "Create Microsoft 365 Groups aligned to departments for access control (HR, Finance, Programs)",
+        "Restrict per-site sharing on sites containing sensitive data",
+        "Enable Security Defaults in Entra ID (free MFA for all users — critical baseline)",
+        "Train staff on manual file protections: restrict download/copy/print via Share settings",
+        "Create a data classification reference document with naming conventions (e.g., prefix files with [CONFIDENTIAL])",
+        "Consider upgrading to Business Premium ($5.50/user/mo) for sensitivity labels, DLP, and Conditional Access"
+      ]
+    },
+    {
+      "id": "businessStandard",
+      "name": "Business Standard",
+      "equivalent": "Business Standard",
+      "pricePerUser": "~$3",
+      "nonprofitNote": "~75% off commercial pricing",
+      "userCap": 300,
+      "features": {
+        "dlp": { "available": false, "label": "Not available", "detail": "Purview DLP requires Business Premium or higher" },
+        "sensitivityLabels": { "available": false, "label": "Not available", "detail": "Manual sensitivity labels require Business Premium or higher" },
+        "autoLabeling": { "available": false, "label": "Not available", "detail": "Auto-labeling policies require E5" },
+        "sharingControls": { "available": true, "label": "Available", "detail": "Admin-level SharePoint/OneDrive external sharing controls" },
+        "domainRestrictions": { "available": true, "label": "Available", "detail": "Domain allowlist/blocklist for external sharing" },
+        "sitePermissions": { "available": true, "label": "Available", "detail": "Per-site external sharing restrictions" },
+        "securityGroups": { "available": true, "label": "Available", "detail": "Microsoft 365 Groups and Security Groups for access control" },
+        "conditionalAccess": { "available": false, "label": "Not available", "detail": "Conditional Access requires Entra ID P1, included in Business Premium or higher" },
+        "ome": { "available": false, "label": "Not available", "detail": "Office Message Encryption requires Business Premium or higher" },
+        "irm": { "available": false, "label": "Not available", "detail": "Azure Rights Management / IRM requires Business Premium or higher" },
+        "irmAutoApply": { "available": false, "label": "Not available", "detail": "Auto-apply IRM via DLP requires E5" },
+        "ediscovery": { "available": false, "label": "Limited", "detail": "Basic content search only — no case management, legal hold, or export" },
+        "intune": { "available": false, "label": "Not available", "detail": "Intune device management requires Business Premium or higher" },
+        "securityCenter": { "available": false, "label": "Not available", "detail": "Microsoft 365 Security Center / Defender requires Business Premium or higher" },
+        "smime": { "available": false, "label": "Not available", "detail": "S/MIME configuration requires Business Premium or higher" }
+      },
+      "recommendations": [
+        "Same security controls as Business Basic — Standard adds desktop Office apps but no additional security features",
+        "Configure SharePoint external sharing to 'Only people in your organization' as the default",
+        "Set up domain allowlists for trusted partner organizations",
+        "Create Microsoft 365 Groups aligned to departments for access control",
+        "Enable Security Defaults in Entra ID (free MFA for all users)",
+        "Use per-site sharing restrictions on sites containing T3/T4 data",
+        "Train staff on manual file protections in SharePoint/OneDrive",
+        "Strongly consider upgrading to Business Premium ($5.50/user/mo) — the security gap between Standard and Premium is significant"
+      ]
+    },
+    {
+      "id": "businessPremium",
+      "name": "Business Premium",
+      "equivalent": "Business Premium",
+      "pricePerUser": "$5.50",
+      "nonprofitNote": "~75% off commercial pricing; up to 300 users",
+      "userCap": 300,
+      "features": {
+        "dlp": { "available": true, "label": "Available", "detail": "Purview DLP for Exchange, SharePoint, and OneDrive — create rules to detect and protect sensitive data (SSNs, credit cards, etc.)" },
+        "sensitivityLabels": { "available": true, "label": "Available (manual)", "detail": "Create and manually apply sensitivity labels to documents and emails. Labels can enforce encryption and access restrictions." },
+        "autoLabeling": { "available": false, "label": "Not available", "detail": "Service-side auto-labeling policies require E5" },
+        "sharingControls": { "available": true, "label": "Available", "detail": "Admin-level SharePoint/OneDrive external sharing controls" },
+        "domainRestrictions": { "available": true, "label": "Available", "detail": "Domain allowlist/blocklist for external sharing" },
+        "sitePermissions": { "available": true, "label": "Available", "detail": "Per-site external sharing restrictions" },
+        "securityGroups": { "available": true, "label": "Available", "detail": "Microsoft 365 Groups and Security Groups for access control" },
+        "conditionalAccess": { "available": true, "label": "Available", "detail": "Entra ID P1 Conditional Access — control access based on device compliance, location, and app" },
+        "ome": { "available": true, "label": "Available", "detail": "Purview Message Encryption (OME) — encrypt emails sent to external recipients. Recipients open via web portal." },
+        "irm": { "available": true, "label": "Available", "detail": "Azure Rights Management (IRM) — encrypt and restrict documents. Tied to sensitivity labels for persistent protection." },
+        "irmAutoApply": { "available": false, "label": "Not available", "detail": "Auto-apply IRM via DLP requires E5" },
+        "ediscovery": { "available": false, "label": "Limited", "detail": "Content search available; eDiscovery Standard (case management, legal hold, export) requires E3 or higher" },
+        "intune": { "available": true, "label": "Available", "detail": "Intune Plan 1 — enroll and manage devices, enforce compliance policies, remote wipe" },
+        "securityCenter": { "available": true, "label": "Partial", "detail": "Defender for Business and Defender for Office 365 Plan 1; partial Security Center access" },
+        "smime": { "available": true, "label": "Available", "detail": "S/MIME email encryption configurable in Exchange Online with organizational PKI" }
+      },
+      "recommendations": [
+        "Deploy sensitivity labels matching your classification tiers: Public, Internal, Confidential, Restricted",
+        "Configure DLP rules to detect sensitive data (SSNs, credit card numbers, health identifiers) — start in audit-only mode",
+        "Set up Conditional Access policies: require compliant devices for T3/T4 data access",
+        "Enroll all devices in Intune and enforce compliance (screen lock, encryption, OS updates)",
+        "Enable Purview Message Encryption for external emails containing sensitive data",
+        "Configure IRM on sensitivity labels so Confidential and Restricted documents stay encrypted even when shared",
+        "Train all staff on applying sensitivity labels when creating or uploading documents",
+        "Enable Defender for Office 365 to protect against phishing and malware in email/Teams"
+      ]
+    },
+    {
+      "id": "e3",
+      "name": "Enterprise E3",
+      "equivalent": "Enterprise E3",
+      "pricePerUser": "$9",
+      "nonprofitNote": "~75% off commercial pricing; no user cap",
+      "userCap": null,
+      "features": {
+        "dlp": { "available": true, "label": "Available", "detail": "Full Purview DLP for Exchange, SharePoint, and OneDrive with advanced rule configuration" },
+        "sensitivityLabels": { "available": true, "label": "Available (manual)", "detail": "Full manual sensitivity labeling with encryption, access restrictions, and visual markings" },
+        "autoLabeling": { "available": false, "label": "Not available", "detail": "Service-side auto-labeling requires E5 or E5 Information Protection add-on" },
+        "sharingControls": { "available": true, "label": "Available", "detail": "Full SharePoint/OneDrive external sharing controls" },
+        "domainRestrictions": { "available": true, "label": "Available", "detail": "Domain allowlist/blocklist with advanced controls" },
+        "sitePermissions": { "available": true, "label": "Available", "detail": "Full per-site sharing and access restrictions" },
+        "securityGroups": { "available": true, "label": "Available", "detail": "Microsoft 365 Groups, Security Groups, and dynamic group membership" },
+        "conditionalAccess": { "available": true, "label": "Available", "detail": "Entra ID P1 Conditional Access — device, location, and app-based access controls" },
+        "ome": { "available": true, "label": "Available", "detail": "Purview Message Encryption for external email encryption" },
+        "irm": { "available": true, "label": "Available", "detail": "Full Azure Rights Management with sensitivity label integration" },
+        "irmAutoApply": { "available": false, "label": "Not available", "detail": "Auto-apply IRM via DLP requires E5" },
+        "ediscovery": { "available": true, "label": "Available", "detail": "eDiscovery Standard — case management, legal holds, search, and export across Exchange, SharePoint, OneDrive, and Teams" },
+        "intune": { "available": true, "label": "Available", "detail": "Intune Plan 1 — full mobile device and app management" },
+        "securityCenter": { "available": true, "label": "Available", "detail": "Microsoft 365 Security Center with Defender for Endpoint P1" },
+        "smime": { "available": true, "label": "Available", "detail": "Full S/MIME support in Exchange Online" }
+      },
+      "recommendations": [
+        "Configure eDiscovery Standard — create cases for litigation and regulatory inquiries, set up legal holds",
+        "Deploy DLP policies with advanced rules for content detection across Exchange, SharePoint, and OneDrive",
+        "Create sensitivity labels with encryption for Confidential and Restricted tiers",
+        "Set up Conditional Access policies requiring managed devices for T3/T4 applications",
+        "Use eDiscovery legal holds to preserve data for compliance and legal requirements",
+        "Configure retention policies in Microsoft Purview for regulatory data retention periods",
+        "Enable Defender for Endpoint P1 for device-level threat protection",
+        "Set up Intune compliance policies: require encryption, block jailbroken devices, enforce OS updates",
+        "Train compliance staff on eDiscovery workflows: search, hold, review, and export",
+        "Consider E5 upgrade for auto-labeling if you handle large volumes of T4 data requiring automated classification"
+      ]
+    },
+    {
+      "id": "e5",
+      "name": "Enterprise E5",
+      "equivalent": "Enterprise E5",
+      "pricePerUser": "$22.80",
+      "nonprofitNote": "~75% off commercial pricing; no user cap",
+      "userCap": null,
+      "features": {
+        "dlp": { "available": true, "label": "Available (full)", "detail": "Full Purview DLP including Teams chat/channel messages and Endpoint DLP for managed devices" },
+        "sensitivityLabels": { "available": true, "label": "Available (manual + auto)", "detail": "Manual labels plus service-side auto-labeling based on content inspection" },
+        "autoLabeling": { "available": true, "label": "Available", "detail": "Service-side auto-labeling policies — automatically classify documents and emails based on content (SSNs, health records, etc.)" },
+        "sharingControls": { "available": true, "label": "Available", "detail": "Full SharePoint/OneDrive sharing controls with sensitivity label integration" },
+        "domainRestrictions": { "available": true, "label": "Available", "detail": "Full domain controls with advanced governance" },
+        "sitePermissions": { "available": true, "label": "Available", "detail": "Per-site controls with sensitivity label-based access restrictions" },
+        "securityGroups": { "available": true, "label": "Available", "detail": "Full group management with dynamic membership and access reviews" },
+        "conditionalAccess": { "available": true, "label": "Available (advanced)", "detail": "Entra ID P2 — risk-based Conditional Access using sign-in risk and user risk signals" },
+        "ome": { "available": true, "label": "Available (advanced)", "detail": "Advanced Message Encryption — revoke encrypted emails, set custom branding, multiple encryption templates" },
+        "irm": { "available": true, "label": "Available", "detail": "Full Azure Rights Management with auto-apply via DLP" },
+        "irmAutoApply": { "available": true, "label": "Available", "detail": "DLP rules can automatically apply sensitivity labels with encryption based on content detection" },
+        "ediscovery": { "available": true, "label": "Available (premium)", "detail": "eDiscovery Premium — custodian workflows, review sets with AI-powered relevance, advanced analytics, and conversation threading" },
+        "intune": { "available": true, "label": "Available", "detail": "Full Intune with advanced device management and app protection" },
+        "securityCenter": { "available": true, "label": "Available (full)", "detail": "Full Microsoft 365 Defender XDR with Defender for Endpoint P2, Defender for Office 365 P2, Insider Risk Management" },
+        "smime": { "available": true, "label": "Available", "detail": "Full S/MIME with advanced certificate management" }
+      },
+      "recommendations": [
+        "Deploy auto-labeling policies to classify documents based on content — reduce reliance on manual labeling",
+        "Configure DLP for Teams to prevent sensitive data sharing in chat and channel messages",
+        "Enable Endpoint DLP to monitor and restrict sensitive data on managed devices (USB, print, clipboard)",
+        "Set up risk-based Conditional Access using Entra ID P2 sign-in and user risk signals",
+        "Configure eDiscovery Premium with review sets and AI-powered relevance for efficient legal review",
+        "Deploy Advanced Message Encryption with custom branding and revocation capability",
+        "Enable Insider Risk Management to detect and investigate potential data exfiltration",
+        "Use Defender XDR for unified threat investigation across email, endpoints, identity, and apps",
+        "Set up Audit Premium for 1-year log retention and advanced audit events",
+        "Create automated DLP incident workflows with notification rules and escalation paths",
+        "Run auto-labeling in simulation mode for 2-4 weeks before enforcement to tune accuracy"
+      ]
+    }
+  ],
+  "implementationChecklist": {
+    "businessBasic": [
+      { "step": "Configure SharePoint external sharing", "path": "SharePoint admin center > Policies > Sharing", "detail": "Set organization-level sharing to 'Only people in your organization' to prevent accidental external sharing" },
+      { "step": "Set up domain allowlists", "path": "SharePoint admin center > Policies > Sharing > Advanced settings", "detail": "Add trusted partner domains to the allowlist so staff can share with approved organizations" },
+      { "step": "Create Microsoft 365 Groups", "path": "Microsoft 365 admin center > Teams & groups > Active groups", "detail": "Create groups per department (HR, Finance, Programs). These control access to SharePoint sites, Teams channels, and shared mailboxes" },
+      { "step": "Restrict per-site sharing", "path": "SharePoint admin center > Sites > Active sites > [site] > Sharing", "detail": "For sites containing sensitive data, override the org default to restrict external sharing entirely" },
+      { "step": "Enable Security Defaults", "path": "Entra admin center > Properties > Manage security defaults", "detail": "Enable Security Defaults to require MFA for all users. This is free and the single most impactful security control." },
+      { "step": "Configure password policies", "path": "Microsoft 365 admin center > Settings > Org settings > Security & privacy > Password expiration policy", "detail": "Consider disabling password expiration (NIST 800-63 guidance) and instead requiring strong, unique passwords with MFA" },
+      { "step": "Review third-party app consent", "path": "Entra admin center > Applications > Enterprise applications > Consent and permissions", "detail": "Restrict user consent for third-party apps — require admin approval for new app access" },
+      { "step": "Train staff on manual protections", "path": "N/A -- training activity", "detail": "Show staff how to restrict download/print/copy via SharePoint document library settings and file sharing options" },
+      { "step": "Create classification reference document", "path": "N/A -- documentation", "detail": "Since sensitivity labels aren't available, create a shared document explaining tiers and naming conventions (e.g., [CONFIDENTIAL] prefix)" },
+      { "step": "Designate backup admin", "path": "Microsoft 365 admin center > Users > Active users > [user] > Manage admin roles", "detail": "Ensure at least 2 people have Global Administrator access to prevent lockout" }
+    ],
+    "businessStandard": [
+      { "step": "All Business Basic steps above", "path": "See Business Basic checklist", "detail": "Complete all foundational steps first — Business Standard has the same security feature set as Basic" },
+      { "step": "Review and optimize SharePoint site structure", "path": "SharePoint admin center > Sites > Active sites", "detail": "Organize sites by function with appropriate sharing settings. Standard adds more storage which may prompt site reorganization." },
+      { "step": "Configure OneDrive sharing defaults", "path": "SharePoint admin center > Policies > Sharing > OneDrive", "detail": "Set OneDrive default sharing to 'Specific people' to prevent over-sharing via 'Anyone with link'" },
+      { "step": "Plan upgrade to Business Premium", "path": "N/A -- documentation", "detail": "Document the security gaps between Standard and Premium. The $5.50/user/mo upgrade adds DLP, sensitivity labels, Conditional Access, and Intune — all critical for T3/T4 data." }
+    ],
+    "businessPremium": [
+      { "step": "All Business Basic/Standard steps", "path": "See Business Basic checklist", "detail": "Complete all foundational steps first" },
+      { "step": "Create sensitivity labels", "path": "Microsoft Purview compliance portal > Information protection > Labels", "detail": "Create labels matching your classification tiers: Public, Internal, Confidential (encrypt), Restricted (encrypt + restrict). Publish to all users." },
+      { "step": "Configure label policies", "path": "Microsoft Purview compliance portal > Information protection > Label policies", "detail": "Require a default label on documents and emails. Set Confidential as default for sensitive departments." },
+      { "step": "Set up DLP rules", "path": "Microsoft Purview compliance portal > Data loss prevention > Policies", "detail": "Create rules for common sensitive data: SSNs, credit card numbers, health identifiers. Start in 'Test' mode before enforcing." },
+      { "step": "Configure Conditional Access", "path": "Entra admin center > Protection > Conditional Access > Policies", "detail": "Create policies: require MFA for all users; require compliant devices for accessing T3/T4 SharePoint sites; block legacy authentication" },
+      { "step": "Enroll devices in Intune", "path": "Intune admin center > Devices > Enrollment", "detail": "Set up device enrollment for managed devices. Create compliance policies requiring encryption, PIN, and current OS." },
+      { "step": "Enable Defender for Office 365", "path": "Microsoft 365 Defender portal > Email & collaboration > Policies", "detail": "Configure Safe Links and Safe Attachments policies for phishing and malware protection" },
+      { "step": "Set up message encryption", "path": "Microsoft Purview compliance portal > Information protection > Encryption", "detail": "Configure OME templates for encrypting external emails. Create mail flow rules for auto-encryption of emails with Restricted labels." },
+      { "step": "Train staff on sensitivity labels", "path": "N/A -- training activity", "detail": "Train all staff on applying sensitivity labels. Focus on: when to use each tier, how encryption affects sharing, what restrictions each label enforces." },
+      { "step": "Monitor DLP alerts", "path": "Microsoft Purview compliance portal > Data loss prevention > Alerts", "detail": "After enabling DLP in test mode, review alerts weekly. Tune rules to reduce false positives before switching to enforcement." }
+    ],
+    "e3": [
+      { "step": "All Business Premium steps", "path": "See Business Premium checklist", "detail": "Complete all foundational and Premium-tier steps first" },
+      { "step": "Configure eDiscovery Standard", "path": "Microsoft Purview compliance portal > eDiscovery > Standard", "detail": "Create initial cases. Assign eDiscovery Manager role to compliance/legal staff. Train on search, hold, and export workflows." },
+      { "step": "Set up legal holds", "path": "Microsoft Purview compliance portal > eDiscovery > Standard > [case] > Holds", "detail": "Create holds for any active litigation, regulatory inquiry, or internal investigation. Holds preserve email, OneDrive, and SharePoint content." },
+      { "step": "Configure retention policies", "path": "Microsoft Purview compliance portal > Data lifecycle management > Retention policies", "detail": "Set retention periods: 7 years for financial records, per-state requirements for HR data, per-regulation for program data." },
+      { "step": "Deploy Defender for Endpoint", "path": "Microsoft 365 Defender portal > Settings > Endpoints > Onboarding", "detail": "Onboard managed devices to Defender for Endpoint P1 for device-level threat detection and response" },
+      { "step": "Set up advanced Intune policies", "path": "Intune admin center > Devices > Compliance policies", "detail": "Create device compliance policies that feed into Conditional Access: require encryption, block jailbroken devices, enforce OS update deadlines" },
+      { "step": "Configure information barriers (if needed)", "path": "Microsoft Purview compliance portal > Information barriers", "detail": "If departments must be isolated (e.g., HR data from general staff), set up information barriers to prevent cross-segment communication" },
+      { "step": "Train legal/compliance on eDiscovery", "path": "N/A -- training activity", "detail": "Ensure at least 2 staff know how to create cases, place holds, run searches, review results, and export for external counsel" },
+      { "step": "Document compliance procedures", "path": "N/A -- documentation", "detail": "Create internal procedures for legal hold requests, retention policy changes, DLP exception handling, and eDiscovery export" }
+    ],
+    "e5": [
+      { "step": "All E3 steps", "path": "See E3 checklist", "detail": "Complete all foundational through E3-tier steps first" },
+      { "step": "Deploy auto-labeling policies", "path": "Microsoft Purview compliance portal > Information protection > Auto-labeling", "detail": "Create policies to auto-label documents containing SSNs, health records, financial data. Run in simulation mode for 2-4 weeks before enforcing." },
+      { "step": "Configure DLP for Teams", "path": "Microsoft Purview compliance portal > Data loss prevention > Policies", "detail": "Extend DLP policies to Teams chat and channel messages. Block sharing of sensitive data (SSNs, credit cards) in Teams conversations." },
+      { "step": "Enable Endpoint DLP", "path": "Microsoft Purview compliance portal > Data loss prevention > Endpoint DLP settings", "detail": "Monitor and restrict sensitive data on managed devices: block USB copy, restrict printing, control clipboard for classified documents" },
+      { "step": "Set up risk-based Conditional Access", "path": "Entra admin center > Protection > Conditional Access > Policies", "detail": "Create policies using Entra ID P2 risk signals: require MFA for risky sign-ins, block high-risk users, enforce password change for compromised accounts" },
+      { "step": "Configure eDiscovery Premium", "path": "Microsoft Purview compliance portal > eDiscovery > Premium", "detail": "Set up custodian management, create review sets with AI-powered relevance scoring, configure conversation threading for Teams/email" },
+      { "step": "Enable Insider Risk Management", "path": "Microsoft Purview compliance portal > Insider risk management", "detail": "Configure policies to detect data exfiltration, security policy violations, and departing employee data theft" },
+      { "step": "Deploy Advanced Message Encryption", "path": "Microsoft Purview compliance portal > Information protection > Encryption", "detail": "Configure custom branding for encrypted emails and enable message revocation capability for T4 communications" },
+      { "step": "Enable Audit Premium", "path": "Microsoft Purview compliance portal > Audit", "detail": "Activate 1-year audit log retention. Configure high-value audit events for monitoring privileged activities." },
+      { "step": "Configure Defender XDR", "path": "Microsoft 365 Defender portal > Settings", "detail": "Set up unified security operations: connect Defender for Endpoint P2, Defender for Office 365 P2, and Defender for Identity for cross-domain threat investigation" },
+      { "step": "Create DLP incident response workflow", "path": "N/A -- process", "detail": "Document automated DLP alert routing, triage procedures, escalation paths, and exception request process with time-limited waivers" },
+      { "step": "Schedule quarterly access reviews", "path": "Entra admin center > Identity governance > Access reviews", "detail": "Create recurring access reviews for groups with T3/T4 data access. Assign department managers as reviewers." }
+    ]
+  }
+}

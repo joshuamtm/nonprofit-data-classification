@@ -1,0 +1,1029 @@
+{
+  "tiers": {
+    "T1": {
+      "id": "T1",
+      "label": "Public",
+      "color": "#16a34a",
+      "bgColor": "#f0fdf4",
+      "borderColor": "#bbf7d0",
+      "description": "Information intended for public consumption. No harm if disclosed; may already be published or required to be publicly available.",
+      "riskIfDisclosed": "None",
+      "accessDefault": "Anyone"
+    },
+    "T2": {
+      "id": "T2",
+      "label": "Internal",
+      "color": "#2563eb",
+      "bgColor": "#eff6ff",
+      "borderColor": "#bfdbfe",
+      "description": "Operational information for staff and authorized volunteers. Low harm if accidentally disclosed, but not intended for public release.",
+      "riskIfDisclosed": "Low",
+      "accessDefault": "All staff with a need"
+    },
+    "T3": {
+      "id": "T3",
+      "label": "Confidential",
+      "color": "#d97706",
+      "bgColor": "#fffbeb",
+      "borderColor": "#fde68a",
+      "description": "Sensitive organizational or personal data. Moderate-to-significant harm if disclosed, including reputational damage, loss of donor trust, or regulatory concern.",
+      "riskIfDisclosed": "Moderate to High",
+      "accessDefault": "Role-based, need-to-know"
+    },
+    "T4": {
+      "id": "T4",
+      "label": "Restricted",
+      "color": "#dc2626",
+      "bgColor": "#fef2f2",
+      "borderColor": "#fecaca",
+      "description": "Highest sensitivity data. Disclosure could cause severe harm including legal liability, regulatory penalties, threat to personal safety, or identity theft.",
+      "riskIfDisclosed": "Severe",
+      "accessDefault": "Explicit authorization only"
+    }
+  },
+  "categories": [
+    {
+      "id": "donor-funder",
+      "name": "Donor & Funder Data",
+      "icon": "heart",
+      "description": "Information related to individual donors, institutional funders, and fundraising activities",
+      "dataTypes": [
+        {
+          "name": "Published donor lists (annual report, honor roll)",
+          "tier": "T1",
+          "rationale": "Explicitly published with donor consent",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Fundraising campaign totals and public goal progress",
+          "tier": "T1",
+          "rationale": "Aggregate totals shared publicly to encourage giving",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Donor name and giving history/totals",
+          "tier": "T3",
+          "rationale": "Individual giving data is confidential; disclosure could embarrass donors or invite solicitation",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Donor contact information (address, phone, email)",
+          "tier": "T3",
+          "rationale": "Personal contact data requires protection under privacy best practices",
+          "regulations": ["STATE_PRIVACY", "GDPR"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Donor payment method, credit card, and ACH/bank data",
+          "tier": "T4",
+          "rationale": "Financial account data; breach causes direct financial harm and regulatory liability",
+          "regulations": ["PCI-DSS", "STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Wealth screening and capacity scores",
+          "tier": "T3",
+          "rationale": "Proprietary fundraising intelligence; disclosure damages donor trust and competitive position",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Donor communication preferences and opt-outs",
+          "tier": "T3",
+          "rationale": "Personal preferences linked to identifiable individuals",
+          "regulations": ["CAN-SPAM", "GDPR"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Major gift solicitation strategies and cultivation plans",
+          "tier": "T3",
+          "rationale": "Internal fundraising strategy; disclosure undermines donor relationships",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Planned giving and estate/bequest documentation",
+          "tier": "T4",
+          "rationale": "Legal and financial documents with high sensitivity; involves estate planning and testamentary intent",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "501(c)(4) donor identity and Schedule B data",
+          "tier": "T4",
+          "rationale": "Legally protected from public disclosure; Supreme Court precedent on donor privacy (Americans for Prosperity v. Bonta)",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["advocacy"]
+        },
+        {
+          "name": "Lapsed donor reason codes and exit survey data",
+          "tier": "T3",
+          "rationale": "Linked to identifiable donors; may contain sensitive feedback about the organization",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Funder LOIs, grant agreements, and award letters",
+          "tier": "T3",
+          "rationale": "Contractual documents with confidentiality expectations from funders",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Funder relationship notes and meeting records",
+          "tier": "T3",
+          "rationale": "Internal strategy notes; disclosure could damage funder relationships",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Anonymous donor identity records",
+          "tier": "T3",
+          "rationale": "Donor explicitly requested anonymity; disclosure violates donor intent and trust",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        }
+      ]
+    },
+    {
+      "id": "program-participant",
+      "name": "Program Participant / Client / Beneficiary Data",
+      "icon": "users",
+      "description": "Information about individuals served by the organization's programs and services",
+      "dataTypes": [
+        {
+          "name": "Aggregated program outcomes and impact statistics",
+          "tier": "T1",
+          "rationale": "De-identified aggregate data published in reports and grant applications",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Program descriptions and service offerings",
+          "tier": "T1",
+          "rationale": "Public information used for outreach and funder communications",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Client name and contact information",
+          "tier": "T3",
+          "rationale": "Personally identifiable information; many clients are from vulnerable populations",
+          "regulations": ["STATE_PRIVACY", "GDPR"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Client intake forms and demographic data",
+          "tier": "T3",
+          "rationale": "Contains PII and potentially sensitive demographic information collected during enrollment",
+          "regulations": ["STATE_PRIVACY", "GDPR"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Client SSN or government-issued ID numbers",
+          "tier": "T4",
+          "rationale": "Highest-risk PII; enables identity theft if disclosed",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Client immigration status and documentation",
+          "tier": "T4",
+          "rationale": "Disclosure could lead to deportation, family separation, or physical danger",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["human_services", "housing"]
+        },
+        {
+          "name": "Client mental health records and diagnoses",
+          "tier": "T4",
+          "rationale": "Protected health information with severe stigma risk if disclosed",
+          "regulations": ["HIPAA", "STATE_PRIVACY"],
+          "sectors": ["health", "human_services"]
+        },
+        {
+          "name": "Client substance use treatment records",
+          "tier": "T4",
+          "rationale": "Federally protected with stricter rules than general health data",
+          "regulations": ["42_CFR_PART_2", "HIPAA", "STATE_PRIVACY"],
+          "sectors": ["health", "human_services"]
+        },
+        {
+          "name": "Client HIV/AIDS status and related records",
+          "tier": "T4",
+          "rationale": "Specially protected health data; state laws impose additional confidentiality requirements",
+          "regulations": ["HIPAA", "STATE_PRIVACY"],
+          "sectors": ["health", "human_services"]
+        },
+        {
+          "name": "Client domestic violence records and shelter location",
+          "tier": "T4",
+          "rationale": "Disclosure poses direct physical safety risk to survivors",
+          "regulations": ["VAWA", "STATE_PRIVACY"],
+          "sectors": ["human_services", "housing"]
+        },
+        {
+          "name": "HMIS client records (Homeless Management Information System)",
+          "tier": "T4",
+          "rationale": "Federally regulated data system with strict privacy and security standards",
+          "regulations": ["HMIS", "STATE_PRIVACY"],
+          "sectors": ["housing", "human_services"]
+        },
+        {
+          "name": "Client financial data (income, benefits, debts)",
+          "tier": "T3",
+          "rationale": "Sensitive personal financial information collected for service eligibility",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Client case notes and service interactions",
+          "tier": "T3",
+          "rationale": "Detailed notes on client circumstances; may contain sensitive disclosures",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Client legal records (court orders, probation, custody)",
+          "tier": "T4",
+          "rationale": "Legal records with severe consequences if improperly disclosed",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["human_services"]
+        },
+        {
+          "name": "Client benefit enrollment and eligibility records",
+          "tier": "T3",
+          "rationale": "Contains PII and financial eligibility data; linked to government programs",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["human_services", "health"]
+        },
+        {
+          "name": "Client education records and academic history",
+          "tier": "T3",
+          "rationale": "Education records protected by federal law when collected from educational institutions",
+          "regulations": ["FERPA", "STATE_PRIVACY"],
+          "sectors": ["education", "human_services"]
+        },
+        {
+          "name": "Identifiable client photos and video",
+          "tier": "T3",
+          "rationale": "Visual identification of program participants; requires explicit consent for use",
+          "regulations": ["STATE_PRIVACY", "GDPR"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "De-identified participant data for reporting",
+          "tier": "T2",
+          "rationale": "Stripped of direct identifiers but still operational data not intended for public release",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Research data with participant PII",
+          "tier": "T4",
+          "rationale": "Research data linked to identifiable participants; subject to IRB protocols and consent agreements",
+          "regulations": ["HIPAA", "STATE_PRIVACY"],
+          "sectors": ["all"]
+        }
+      ]
+    },
+    {
+      "id": "employee-hr",
+      "name": "Employee & HR Data",
+      "icon": "briefcase",
+      "description": "Personnel records, employment data, and human resources information",
+      "dataTypes": [
+        {
+          "name": "Staff directory (name, title, work email)",
+          "tier": "T2",
+          "rationale": "Basic work contact info shared internally; not published externally by default",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Published leadership bios and headshots",
+          "tier": "T1",
+          "rationale": "Intentionally published on website and in materials",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Employee Social Security numbers",
+          "tier": "T4",
+          "rationale": "Highest-risk PII; enables identity theft and tax fraud",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Employee date of birth",
+          "tier": "T3",
+          "rationale": "PII element used in identity verification; combined with other data enables fraud",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Employee home address and personal contact information",
+          "tier": "T3",
+          "rationale": "Personal information not needed by most staff; safety concern for some roles",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Payroll records and individual compensation data",
+          "tier": "T4",
+          "rationale": "Highly sensitive; disclosure causes organizational disruption and individual harm",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Performance reviews and disciplinary records",
+          "tier": "T3",
+          "rationale": "Confidential employment records; disclosure could lead to legal claims",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Medical records and disability accommodation requests",
+          "tier": "T4",
+          "rationale": "Protected health and disability information with strict legal requirements",
+          "regulations": ["HIPAA", "ADA", "STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Background check and criminal history results",
+          "tier": "T4",
+          "rationale": "Highly sensitive; regulated by FCRA and state ban-the-box laws",
+          "regulations": ["FCRA", "STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "I-9 employment eligibility and immigration verification",
+          "tier": "T4",
+          "rationale": "Contains citizenship/immigration data; federally regulated retention and access requirements",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "EEO demographic and self-identification data",
+          "tier": "T3",
+          "rationale": "Sensitive demographic data collected for compliance; must be kept separate from personnel files",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Benefit enrollment and dependent information",
+          "tier": "T3",
+          "rationale": "Contains PII of employees and their family members including health plan selections",
+          "regulations": ["HIPAA", "STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Termination documentation and severance agreements",
+          "tier": "T3",
+          "rationale": "Confidential employment records; may contain legal terms and release agreements",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Workplace incident and injury reports",
+          "tier": "T4",
+          "rationale": "Contains medical information and details of workplace events; potential legal implications",
+          "regulations": ["HIPAA", "STATE_PRIVACY"],
+          "sectors": ["all"]
+        }
+      ]
+    },
+    {
+      "id": "financial",
+      "name": "Financial Data",
+      "icon": "dollar-sign",
+      "description": "Organizational financial records, budgets, accounts, and fiscal reporting",
+      "dataTypes": [
+        {
+          "name": "Published Form 990 and schedules",
+          "tier": "T1",
+          "rationale": "Required to be publicly available; accessible on GuideStar/Candid and IRS databases",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Audited financial statements (published)",
+          "tier": "T1",
+          "rationale": "Typically shared with funders and public; often required for transparency",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Annual budget (board-approved summary)",
+          "tier": "T2",
+          "rationale": "Internal governance document; not public but low harm if disclosed",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Detailed line-item budget with variance reports",
+          "tier": "T3",
+          "rationale": "Reveals operational strategy, cost structure, and financial performance details",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Chart of accounts and general ledger detail",
+          "tier": "T3",
+          "rationale": "Granular financial data revealing transaction-level organizational spending",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Vendor contracts, pricing, and terms",
+          "tier": "T3",
+          "rationale": "Confidential commercial terms; disclosure could harm negotiating position",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Banking account numbers and routing information",
+          "tier": "T4",
+          "rationale": "Direct financial access credentials; disclosure enables wire fraud and theft",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Investment accounts and portfolio details",
+          "tier": "T3",
+          "rationale": "Sensitive financial strategy information; may include account identifiers",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Endowment details and restricted fund allocations",
+          "tier": "T3",
+          "rationale": "Donor-restricted funds with specific terms; disclosure may violate donor agreements",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Payroll runs with individual employee compensation",
+          "tier": "T4",
+          "rationale": "Contains individual salary, deductions, and banking info; highly sensitive",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Accounts payable and accounts receivable detail",
+          "tier": "T3",
+          "rationale": "Reveals vendor relationships, payment terms, and cash flow details",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Grant financial reports and expenditure tracking",
+          "tier": "T3",
+          "rationale": "Funder-specific financial data; may be subject to confidentiality terms in grant agreements",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Tax filings beyond Form 990 (state, payroll, 1099s)",
+          "tier": "T3",
+          "rationale": "Contains sensitive organizational and individual financial data",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Credit card and purchasing card account data",
+          "tier": "T4",
+          "rationale": "Financial account data subject to PCI-DSS; disclosure enables fraud",
+          "regulations": ["PCI-DSS", "STATE_PRIVACY"],
+          "sectors": ["all"]
+        }
+      ]
+    },
+    {
+      "id": "legal-governance",
+      "name": "Legal & Governance Data",
+      "icon": "scale",
+      "description": "Corporate governance, legal affairs, regulatory compliance, and board records",
+      "dataTypes": [
+        {
+          "name": "Articles of incorporation",
+          "tier": "T1",
+          "rationale": "Public record filed with the state; freely available",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "IRS determination letter (tax-exempt status)",
+          "tier": "T1",
+          "rationale": "Required to be available for public inspection; confirms exempt status",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Board member names and published bios",
+          "tier": "T1",
+          "rationale": "Publicly listed on website and Form 990; transparency requirement",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Board meeting minutes (public portions)",
+          "tier": "T2",
+          "rationale": "General governance record; non-sensitive portions shared with stakeholders",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Executive session board minutes",
+          "tier": "T4",
+          "rationale": "Covers personnel actions, litigation, and other privileged matters; attorney-client privilege may apply",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Bylaws",
+          "tier": "T2",
+          "rationale": "Governance framework document; sometimes shared with funders and regulators",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Conflict of interest disclosures",
+          "tier": "T3",
+          "rationale": "Contains personal financial interests of board and staff; sensitive but required for governance",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Litigation files and legal correspondence",
+          "tier": "T4",
+          "rationale": "Attorney-client privileged; disclosure could severely harm legal position",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Contracts with vendors, partners, and funders",
+          "tier": "T3",
+          "rationale": "Confidential commercial and programmatic terms; may contain termination and liability clauses",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Insurance policies and coverage details",
+          "tier": "T3",
+          "rationale": "Reveals coverage limits and organizational risk profile; useful to bad actors",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Regulatory filings (state charity registration)",
+          "tier": "T2",
+          "rationale": "Filed with state regulators; generally accessible but not proactively published",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Whistleblower complaints and investigation files",
+          "tier": "T4",
+          "rationale": "Legally protected communications; disclosure could endanger complainants and obstruct investigations",
+          "regulations": ["SOX"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Intellectual property filings and trademarks",
+          "tier": "T3",
+          "rationale": "Some filings are public but strategy and pending applications are confidential",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Merger, acquisition, or dissolution documents",
+          "tier": "T4",
+          "rationale": "Premature disclosure could derail negotiations, harm staff morale, and trigger regulatory issues",
+          "regulations": [],
+          "sectors": ["all"]
+        }
+      ]
+    },
+    {
+      "id": "communications-advocacy",
+      "name": "Communications & Advocacy Data",
+      "icon": "megaphone",
+      "description": "Marketing, public relations, advocacy, and stakeholder communications",
+      "dataTypes": [
+        {
+          "name": "Published press releases and media statements",
+          "tier": "T1",
+          "rationale": "Intentionally distributed to the public and media",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Marketing materials and brochures",
+          "tier": "T1",
+          "rationale": "Designed for public distribution to promote programs and services",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Published social media content",
+          "tier": "T1",
+          "rationale": "Posted on public platforms for broad consumption",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Email newsletter subscriber lists",
+          "tier": "T3",
+          "rationale": "Contains PII of supporters; subject to anti-spam and privacy regulations",
+          "regulations": ["CAN-SPAM", "GDPR", "STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Advocacy and grassroots contact lists",
+          "tier": "T3",
+          "rationale": "Identifies individuals by political activity and interests; sensitive in advocacy context",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["advocacy"]
+        },
+        {
+          "name": "Lobbying contact records and meeting logs",
+          "tier": "T3",
+          "rationale": "Documents political relationships; some subject to lobbying disclosure laws",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["advocacy"]
+        },
+        {
+          "name": "Advocacy strategy and campaign planning documents",
+          "tier": "T3",
+          "rationale": "Internal strategy; premature disclosure undermines campaign effectiveness",
+          "regulations": [],
+          "sectors": ["advocacy"]
+        },
+        {
+          "name": "Draft policy positions and talking points",
+          "tier": "T2",
+          "rationale": "Internal working documents; not yet approved for external distribution",
+          "regulations": [],
+          "sectors": ["advocacy"]
+        },
+        {
+          "name": "Coalition partner lists and relationship maps",
+          "tier": "T2",
+          "rationale": "Internal coordination information; not confidential but not publicly shared",
+          "regulations": [],
+          "sectors": ["advocacy"]
+        },
+        {
+          "name": "Media contact lists and journalist relationships",
+          "tier": "T2",
+          "rationale": "Internal communications resource; not sensitive but operationally valuable",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Crisis communications plans and messaging",
+          "tier": "T3",
+          "rationale": "Internal response strategy; disclosure undermines crisis management capability",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Social media account credentials and admin access",
+          "tier": "T4",
+          "rationale": "Authentication credentials; compromise enables impersonation and reputational damage",
+          "regulations": [],
+          "sectors": ["all"]
+        }
+      ]
+    },
+    {
+      "id": "grant-proposal",
+      "name": "Grant & Proposal Data",
+      "icon": "file-text",
+      "description": "Grant applications, proposals, funder reports, and related compliance documentation",
+      "dataTypes": [
+        {
+          "name": "Published grant awards and amounts",
+          "tier": "T1",
+          "rationale": "Often announced publicly by funders and recipients; listed on 990s",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Program narratives submitted to funders",
+          "tier": "T2",
+          "rationale": "Describes programs in detail; not public but not highly sensitive",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Pending grant proposals (not yet awarded)",
+          "tier": "T3",
+          "rationale": "Contains competitive strategy and budget details; premature disclosure disadvantages the organization",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Grant budgets submitted to funders",
+          "tier": "T3",
+          "rationale": "Reveals cost structure, staff compensation, and indirect rates",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Grant reports submitted to funders",
+          "tier": "T3",
+          "rationale": "Contains outcome data and financial reporting; subject to funder confidentiality expectations",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Funder prospect research and cultivation strategies",
+          "tier": "T3",
+          "rationale": "Internal fundraising intelligence; disclosure damages competitive position",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Declined proposals and funder feedback",
+          "tier": "T3",
+          "rationale": "Internal learning data; funder feedback may be provided in confidence",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Grant agreement and contract terms",
+          "tier": "T3",
+          "rationale": "Binding legal documents with confidentiality provisions",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Subaward and subcontract agreements",
+          "tier": "T3",
+          "rationale": "Contains partner financial terms and compliance obligations",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Federal grant compliance documentation (OMB Uniform Guidance)",
+          "tier": "T3",
+          "rationale": "Audit-sensitive records required for federal funding compliance",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Proprietary program models and logic models",
+          "tier": "T3",
+          "rationale": "Intellectual property representing organizational methodology and innovation",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Human subjects research protocols (IRB-approved)",
+          "tier": "T4",
+          "rationale": "Contains protocols for research involving human participants; strict regulatory oversight",
+          "regulations": ["HIPAA", "STATE_PRIVACY"],
+          "sectors": ["health", "human_services", "education"]
+        }
+      ]
+    },
+    {
+      "id": "volunteer",
+      "name": "Volunteer Data",
+      "icon": "hand-helping",
+      "description": "Information about volunteers including recruitment, screening, and service records",
+      "dataTypes": [
+        {
+          "name": "Volunteer roster (name and role, internal use)",
+          "tier": "T2",
+          "rationale": "Basic internal coordination data; not published externally",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Volunteer contact information (address, phone, email)",
+          "tier": "T3",
+          "rationale": "Personal contact data requiring privacy protection",
+          "regulations": ["STATE_PRIVACY", "GDPR"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Volunteer application and screening records",
+          "tier": "T3",
+          "rationale": "Contains personal information submitted during application process",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Volunteer background check results",
+          "tier": "T4",
+          "rationale": "Criminal history and screening results; regulated by FCRA with strict access and disposal requirements",
+          "regulations": ["FCRA", "STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Volunteer hours and service activity logs",
+          "tier": "T2",
+          "rationale": "Operational tracking data; low sensitivity but not publicly shared",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Volunteer reference letters and recommendations",
+          "tier": "T3",
+          "rationale": "Confidential assessments of individuals; disclosure could harm relationships",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Minor volunteer records and parental consent forms",
+          "tier": "T4",
+          "rationale": "Data about children requires heightened protection; parental consent obligations",
+          "regulations": ["COPPA", "STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Volunteer certifications and training completion records",
+          "tier": "T2",
+          "rationale": "Administrative records tracking qualifications; low sensitivity",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Volunteer emergency contact information",
+          "tier": "T3",
+          "rationale": "Personal information about volunteers and their contacts; needed for safety but must be protected",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        }
+      ]
+    },
+    {
+      "id": "case-management",
+      "name": "Case Management Data",
+      "icon": "clipboard",
+      "description": "Records from direct service delivery, case management systems, and client-facing interventions",
+      "dataTypes": [
+        {
+          "name": "Case numbers and client IDs (non-identifying)",
+          "tier": "T2",
+          "rationale": "Internal identifiers without PII; used for operational tracking",
+          "regulations": [],
+          "sectors": ["human_services", "health"]
+        },
+        {
+          "name": "Case intake and assessment records",
+          "tier": "T3",
+          "rationale": "Contains detailed personal circumstances, needs assessment, and eligibility data",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["human_services", "health"]
+        },
+        {
+          "name": "Service plans and goal-setting documentation",
+          "tier": "T3",
+          "rationale": "Individualized plans containing personal goals, barriers, and strategies",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["human_services", "health"]
+        },
+        {
+          "name": "Progress notes and case narrative records",
+          "tier": "T3",
+          "rationale": "Detailed documentation of client interactions, progress, and setbacks",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["human_services", "health"]
+        },
+        {
+          "name": "Crisis intervention records",
+          "tier": "T4",
+          "rationale": "Documents acute safety situations; may contain suicidal ideation, abuse disclosures, or imminent danger details",
+          "regulations": ["HIPAA", "STATE_PRIVACY"],
+          "sectors": ["human_services", "health"]
+        },
+        {
+          "name": "Safety plans (DV, suicide, child abuse)",
+          "tier": "T4",
+          "rationale": "Contains safety strategies and location information; disclosure directly endangers lives",
+          "regulations": ["VAWA", "HIPAA", "STATE_PRIVACY"],
+          "sectors": ["human_services", "health"]
+        },
+        {
+          "name": "Referral records and inter-agency communications",
+          "tier": "T3",
+          "rationale": "Contains client information shared between providers; subject to consent requirements",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["human_services", "health"]
+        },
+        {
+          "name": "Client consent and release of information forms",
+          "tier": "T3",
+          "rationale": "Legal documents governing information sharing; contain client signatures and PII",
+          "regulations": ["HIPAA", "STATE_PRIVACY"],
+          "sectors": ["human_services", "health"]
+        },
+        {
+          "name": "Case closure and discharge records",
+          "tier": "T3",
+          "rationale": "Documents outcomes, reasons for closure, and aftercare plans",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["human_services", "health"]
+        },
+        {
+          "name": "Child welfare and mandated reporting records",
+          "tier": "T4",
+          "rationale": "Legally privileged reports involving child safety; strict confidentiality requirements",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["human_services"]
+        },
+        {
+          "name": "Housing placement and tenancy records",
+          "tier": "T3",
+          "rationale": "Contains address and housing status information for vulnerable populations",
+          "regulations": ["HMIS", "STATE_PRIVACY"],
+          "sectors": ["housing", "human_services"]
+        },
+        {
+          "name": "Benefits navigation and enrollment assistance records",
+          "tier": "T3",
+          "rationale": "Documents eligibility determinations and applications for public benefits",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["human_services"]
+        }
+      ]
+    },
+    {
+      "id": "research",
+      "name": "Research Data",
+      "icon": "microscope",
+      "description": "Program evaluation, research studies, surveys, and analytical data",
+      "dataTypes": [
+        {
+          "name": "Published research reports and white papers",
+          "tier": "T1",
+          "rationale": "Intentionally published for public consumption and thought leadership",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Survey data (aggregated and de-identified)",
+          "tier": "T1",
+          "rationale": "Statistical summaries with no individual identification; safe for public sharing",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Survey data with individual respondent identification",
+          "tier": "T3",
+          "rationale": "Responses linked to identifiable individuals; consent typically limits use",
+          "regulations": ["STATE_PRIVACY", "GDPR"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Focus group and interview transcripts (identified participants)",
+          "tier": "T3",
+          "rationale": "Verbatim statements linked to named individuals; may contain sensitive opinions",
+          "regulations": ["STATE_PRIVACY"],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Human subjects research data with PII",
+          "tier": "T4",
+          "rationale": "Subject to IRB oversight, informed consent requirements, and federal research regulations",
+          "regulations": ["HIPAA", "STATE_PRIVACY"],
+          "sectors": ["health", "human_services", "education"]
+        },
+        {
+          "name": "Proprietary evaluation frameworks and assessment tools",
+          "tier": "T3",
+          "rationale": "Organizational intellectual property; competitive advantage in program design",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Unpublished research findings and draft analyses",
+          "tier": "T3",
+          "rationale": "Pre-publication data; premature release could be misleading or damage credibility",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Vendor and tool evaluation data",
+          "tier": "T2",
+          "rationale": "Internal procurement research; low sensitivity but not intended for vendors or public",
+          "regulations": [],
+          "sectors": ["all"]
+        },
+        {
+          "name": "Program evaluation contracts and scope of work",
+          "tier": "T3",
+          "rationale": "Contractual terms with evaluators; may contain proprietary methodology and pricing",
+          "regulations": [],
+          "sectors": ["all"]
+        }
+      ]
+    }
+  ]
+}

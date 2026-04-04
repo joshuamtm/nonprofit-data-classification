@@ -1,0 +1,184 @@
+{
+  "controls": [
+    {
+      "id": "nda",
+      "category": "Sharing",
+      "name": "NDA Requirement",
+      "description": "Non-disclosure agreement requirement for external sharing",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "Not required", "detail": "Information is public" },
+        "T2": { "requirement": "none", "label": "Not required", "detail": "Use professional judgment when sharing externally" },
+        "T3": { "requirement": "recommended", "label": "Recommended", "detail": "NDA recommended before sharing with external parties" },
+        "T4": { "requirement": "required", "label": "Required", "detail": "NDA must be executed before any external access" }
+      }
+    },
+    {
+      "id": "encryption-transit",
+      "category": "Network",
+      "name": "Encryption in Transit",
+      "description": "Requirements for encrypting data during transmission",
+      "tiers": {
+        "T1": { "requirement": "optional", "label": "Standard", "detail": "Standard HTTPS/TLS is sufficient for public information" },
+        "T2": { "requirement": "required", "label": "Required", "detail": "TLS 1.2+ required for all transmission" },
+        "T3": { "requirement": "required", "label": "Required", "detail": "TLS 1.2+ required; use encrypted email or secure file transfer for external sharing" },
+        "T4": { "requirement": "required", "label": "Required + Enhanced", "detail": "TLS 1.3 preferred; end-to-end encryption required for external transfers; consider S/MIME or PGP for email" }
+      }
+    },
+    {
+      "id": "encryption-rest",
+      "category": "Storage",
+      "name": "Encryption at Rest",
+      "description": "Requirements for encrypting stored data",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "Not required", "detail": "No encryption requirements for public data" },
+        "T2": { "requirement": "recommended", "label": "Recommended", "detail": "Platform-default encryption (e.g., Google Workspace built-in) is adequate" },
+        "T3": { "requirement": "required", "label": "Required", "detail": "Data must be stored on encrypted volumes; full-disk encryption on endpoints" },
+        "T4": { "requirement": "required", "label": "Required + Enhanced", "detail": "Encryption at rest required; consider client-side encryption or dedicated encryption keys for highly sensitive data" }
+      }
+    },
+    {
+      "id": "access-control",
+      "category": "Access",
+      "name": "Access Control",
+      "description": "Who can access the data and how access is managed",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "Open", "detail": "No access restrictions; available to all staff and may be shared publicly" },
+        "T2": { "requirement": "recommended", "label": "Role-based", "detail": "Limit access to staff who need it for their role; use team-based Shared Drives" },
+        "T3": { "requirement": "required", "label": "Restricted", "detail": "Named-individual access only; documented access list reviewed quarterly; MFA required" },
+        "T4": { "requirement": "required", "label": "Strictly Controlled", "detail": "Named-individual access with documented business justification; access reviewed monthly; MFA required; audit logging enabled" }
+      }
+    },
+    {
+      "id": "mobile-device",
+      "category": "Devices",
+      "name": "Mobile Device Controls",
+      "description": "Requirements for accessing data on mobile devices",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "No restrictions", "detail": "Standard device usage; no additional controls needed" },
+        "T2": { "requirement": "recommended", "label": "Basic controls", "detail": "Screen lock required; remote wipe enabled via Google MDM" },
+        "T3": { "requirement": "required", "label": "Managed devices", "detail": "MDM enrollment required; screen lock, encryption, remote wipe enforced; no data on personal devices without MDM" },
+        "T4": { "requirement": "required", "label": "Strictly managed", "detail": "Organization-managed devices only; MDM with advanced policies; no personal device access; automatic lock after 2 minutes of inactivity" }
+      }
+    },
+    {
+      "id": "email-handling",
+      "category": "Communication",
+      "name": "Email Handling",
+      "description": "Guidelines for sending data via email",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "No restrictions", "detail": "May be sent via standard email to any recipient" },
+        "T2": { "requirement": "recommended", "label": "Use caution", "detail": "Verify recipient addresses; avoid including in email signatures or auto-forwards" },
+        "T3": { "requirement": "required", "label": "Encrypted or confidential", "detail": "Use Gmail Confidential Mode or encrypted attachments; verify recipient; do not include in email body when possible" },
+        "T4": { "requirement": "required", "label": "Restricted", "detail": "Never send via standard email; use secure file sharing links with expiration; if email is unavoidable, use S/MIME or password-protected attachments with password sent separately" }
+      }
+    },
+    {
+      "id": "ai-tool-usage",
+      "category": "Technology",
+      "name": "AI Tool Usage",
+      "description": "Rules for processing data with AI tools (ChatGPT, Claude, Gemini, Copilot, etc.)",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "No restrictions", "detail": "Public information may be used freely with any AI tool" },
+        "T2": { "requirement": "recommended", "label": "Use caution", "detail": "Avoid pasting large datasets; prefer AI tools with enterprise data agreements; do not upload files containing internal-only information" },
+        "T3": { "requirement": "prohibited", "label": "Prohibited unless approved", "detail": "Do NOT input into any AI tool unless it is on the organization's approved tool list with a signed data processing agreement. No consumer-tier AI tools." },
+        "T4": { "requirement": "prohibited", "label": "Prohibited unless approved", "detail": "Do NOT input into any AI tool unless explicitly approved by leadership with a signed BAA or DPA. Even approved tools must be used with minimum-necessary data. Document all AI processing." }
+      }
+    },
+    {
+      "id": "physical-mail",
+      "category": "Physical",
+      "name": "Physical Mail",
+      "description": "Requirements for sending data via physical mail or courier",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "Standard mail", "detail": "May be sent via regular mail" },
+        "T2": { "requirement": "optional", "label": "Standard mail", "detail": "Regular mail acceptable; use sealed envelopes" },
+        "T3": { "requirement": "required", "label": "Tracked delivery", "detail": "Use tracked/certified mail or courier with signature confirmation" },
+        "T4": { "requirement": "required", "label": "Secure courier", "detail": "Secure courier with chain-of-custody tracking and recipient signature required; double-envelope for highly sensitive items" }
+      }
+    },
+    {
+      "id": "instant-messaging",
+      "category": "Communication",
+      "name": "Instant Messaging",
+      "description": "Rules for sharing data via Slack, Teams, Google Chat, or similar platforms",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "Permitted", "detail": "May be discussed freely on organizational messaging platforms" },
+        "T2": { "requirement": "recommended", "label": "Permitted with care", "detail": "Use organizational platforms only (not personal messaging apps); avoid sharing in public channels unnecessarily" },
+        "T3": { "requirement": "prohibited", "label": "Generally prohibited", "detail": "Do not share via instant messaging; use secure file sharing or email with encryption instead. Brief references without full data are acceptable." },
+        "T4": { "requirement": "prohibited", "label": "Prohibited", "detail": "Never share via instant messaging platforms under any circumstances; these platforms are not designed for this sensitivity level" }
+      }
+    },
+    {
+      "id": "remote-access",
+      "category": "Network",
+      "name": "Remote Access",
+      "description": "Requirements for accessing data remotely (outside the office)",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "No restrictions", "detail": "Standard internet access is sufficient" },
+        "T2": { "requirement": "recommended", "label": "Secure connection", "detail": "Use organizational accounts; avoid public Wi-Fi without VPN; 2FA on accounts" },
+        "T3": { "requirement": "required", "label": "VPN + MFA", "detail": "VPN required on non-organizational networks; MFA enforced on all access; no access from shared or public computers" },
+        "T4": { "requirement": "required", "label": "Managed access only", "detail": "VPN required for all remote access; MFA enforced; managed devices only; context-aware access policies if available (Enterprise tier); no public Wi-Fi even with VPN" }
+      }
+    },
+    {
+      "id": "data-disposal",
+      "category": "Lifecycle",
+      "name": "Data Disposal",
+      "description": "Requirements for securely deleting or destroying data",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "Standard deletion", "detail": "Regular deletion from drives and trash; no special procedures required" },
+        "T2": { "requirement": "recommended", "label": "Empty trash", "detail": "Delete files and empty trash; remove from Shared Drives when no longer needed" },
+        "T3": { "requirement": "required", "label": "Secure disposal", "detail": "Permanent deletion with trash emptied; physical media must be securely wiped; maintain disposal log for audit purposes" },
+        "T4": { "requirement": "required", "label": "Verified destruction", "detail": "Cryptographic erasure or certified destruction; maintain certificate of destruction; physical media must be degaussed or shredded; third-party verification for bulk disposal" }
+      }
+    },
+    {
+      "id": "labeling",
+      "category": "Documentation",
+      "name": "Labeling",
+      "description": "How to mark and label documents containing this data",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "No labeling needed", "detail": "Public information does not require classification labels" },
+        "T2": { "requirement": "recommended", "label": "Recommended", "detail": "Label as 'Internal' in document header or Google Drive label if available; helps prevent accidental external sharing" },
+        "T3": { "requirement": "required", "label": "Required", "detail": "Must be labeled 'Confidential' in document header/footer and via Drive labels; include handling instructions on cover page for multi-page documents" },
+        "T4": { "requirement": "required", "label": "Required + Visible", "detail": "Must be labeled 'Restricted' or 'Highly Confidential' on every page header/footer, filename, and via Drive labels; include distribution list and handling instructions" }
+      }
+    },
+    {
+      "id": "printing",
+      "category": "Physical",
+      "name": "Printing",
+      "description": "Restrictions on printing documents containing this data",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "No restrictions", "detail": "May be printed freely" },
+        "T2": { "requirement": "optional", "label": "Minimize printing", "detail": "Prefer digital copies; collect printouts from printer promptly" },
+        "T3": { "requirement": "required", "label": "Restricted printing", "detail": "Print only when necessary; use secure print (badge release) if available; shred printed copies when no longer needed; disable download/print in sharing settings when possible" },
+        "T4": { "requirement": "prohibited", "label": "Prohibited unless approved", "detail": "Do not print unless explicitly authorized; if printed, track all copies; shred immediately after use; disable download/print/copy via IRM controls" }
+      }
+    },
+    {
+      "id": "cloud-storage",
+      "category": "Storage",
+      "name": "Cloud Storage",
+      "description": "Requirements for storing data in cloud platforms",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "Any platform", "detail": "May be stored on any reasonable platform; organizational drives preferred but not required" },
+        "T2": { "requirement": "recommended", "label": "Organizational platforms", "detail": "Store on organizational Google Drive or approved platforms; avoid personal cloud storage accounts" },
+        "T3": { "requirement": "required", "label": "Approved platforms only", "detail": "Must be stored only on organization-approved cloud platforms with appropriate security controls; no personal Dropbox, iCloud, or consumer storage" },
+        "T4": { "requirement": "required", "label": "Restricted approved platforms", "detail": "Approved platforms only with enhanced security; restricted Shared Drives with named access; enable audit logging; consider Vault retention policies if available" }
+      }
+    },
+    {
+      "id": "third-party-sharing",
+      "category": "Sharing",
+      "name": "Third-Party Sharing",
+      "description": "Requirements for sharing data with vendors, partners, or contractors",
+      "tiers": {
+        "T1": { "requirement": "none", "label": "No restrictions", "detail": "Public information may be shared freely with any third party" },
+        "T2": { "requirement": "recommended", "label": "Professional judgment", "detail": "Share on a need-to-know basis; verify the third party is legitimate; use organizational sharing tools rather than personal channels" },
+        "T3": { "requirement": "required", "label": "Agreement required", "detail": "Data processing agreement or NDA required before sharing; limit to minimum necessary data; document what was shared with whom; verify third-party security practices" },
+        "T4": { "requirement": "required", "label": "Formal agreement + oversight", "detail": "Signed DPA/BAA required; legal review of sharing agreement; third-party security assessment required; data minimization enforced; ongoing monitoring of third-party compliance" }
+      }
+    }
+  ]
+}

@@ -1,0 +1,188 @@
+{
+  "tiers": [
+    {
+      "id": "free",
+      "name": "Nonprofits (Free)",
+      "equivalent": "Business Starter",
+      "pricePerUser": "$0",
+      "features": {
+        "dlp": { "available": false, "label": "Not available", "detail": "Content scanning and automated rules require Enterprise" },
+        "driveLabels": { "available": false, "label": "Not available", "detail": "Classification labels require Business Standard or higher" },
+        "gmailLabels": { "available": false, "label": "Not available", "detail": "Gmail classification labels require Business Standard or higher" },
+        "domainSharing": { "available": true, "label": "Available", "detail": "Can restrict all external sharing at domain level" },
+        "allowlistedDomains": { "available": true, "label": "Basic", "detail": "Can allowlist specific domains for sharing" },
+        "sharedDriveControls": { "available": false, "label": "Limited", "detail": "Cannot restrict sharing per Shared Drive" },
+        "targetAudiences": { "available": false, "label": "Not available", "detail": "Custom sharing groups require Business Standard" },
+        "trustRules": { "available": false, "label": "Not available", "detail": "Granular per-user sharing rules require Enterprise" },
+        "gmailConfidential": { "available": true, "label": "Available", "detail": "Set expiration, prevent forwarding/copying. Not true encryption." },
+        "irmViewerRestrict": { "available": true, "label": "Available", "detail": "File owners can restrict viewers from downloading/printing/copying" },
+        "irmAdminEnforced": { "available": false, "label": "Not available", "detail": "Admin-enforced IRM via DLP requires Enterprise" },
+        "vault": { "available": false, "label": "Not available", "detail": "eDiscovery and retention requires Business Plus" },
+        "contextAwareAccess": { "available": false, "label": "Not available", "detail": "Location/device-based access rules require Enterprise" },
+        "securityCenter": { "available": false, "label": "Not available", "detail": "Security analytics dashboard requires Enterprise" },
+        "smime": { "available": false, "label": "Not available", "detail": "S/MIME email encryption requires Enterprise" }
+      },
+      "recommendations": [
+        "Set domain-wide sharing to 'Only people in your organization' as default",
+        "Use Gmail Confidential Mode for sensitive external emails",
+        "Train staff to manually restrict download/print on sensitive files",
+        "Use Shared Drive structure with team-based access for basic access control",
+        "Enable 2-Step Verification for all users (free and critical)",
+        "Enable basic mobile device management (screen lock, remote wipe)",
+        "Consider upgrading to Business Standard ($3.50/user/mo for nonprofits) for Drive labels and Shared Drive controls"
+      ]
+    },
+    {
+      "id": "businessStandard",
+      "name": "Business Standard",
+      "equivalent": "Business Standard",
+      "pricePerUser": "$3.50",
+      "nonprofitDiscount": "~70% off retail",
+      "features": {
+        "dlp": { "available": false, "label": "Not available", "detail": "Content scanning and automated DLP rules require Enterprise" },
+        "driveLabels": { "available": true, "label": "Available (manual)", "detail": "Admins can create classification labels; users apply them manually to Drive files" },
+        "gmailLabels": { "available": true, "label": "Available (manual)", "detail": "Classification labels available for Gmail messages; manual application only" },
+        "domainSharing": { "available": true, "label": "Available", "detail": "Can restrict all external sharing at domain level" },
+        "allowlistedDomains": { "available": true, "label": "Available", "detail": "Can allowlist specific domains for sharing" },
+        "sharedDriveControls": { "available": true, "label": "Available", "detail": "Can restrict sharing settings per individual Shared Drive (prevent external sharing, download, copy)" },
+        "targetAudiences": { "available": true, "label": "Available", "detail": "Create custom target audiences for sharing suggestions and link default audiences" },
+        "trustRules": { "available": false, "label": "Not available", "detail": "Granular per-user or per-OU sharing rules require Enterprise" },
+        "gmailConfidential": { "available": true, "label": "Available", "detail": "Set expiration, prevent forwarding/copying. Not true encryption." },
+        "irmViewerRestrict": { "available": true, "label": "Available", "detail": "File owners can restrict viewers from downloading/printing/copying" },
+        "irmAdminEnforced": { "available": false, "label": "Not available", "detail": "Admin-enforced IRM via DLP requires Enterprise" },
+        "vault": { "available": false, "label": "Not available", "detail": "eDiscovery and retention requires Business Plus" },
+        "contextAwareAccess": { "available": false, "label": "Not available", "detail": "Location/device-based access rules require Enterprise" },
+        "securityCenter": { "available": false, "label": "Not available", "detail": "Security analytics dashboard requires Enterprise" },
+        "smime": { "available": false, "label": "Not available", "detail": "S/MIME email encryption requires Enterprise" }
+      },
+      "recommendations": [
+        "Create Drive labels matching your classification tiers (Public, Internal, Confidential, Restricted)",
+        "Configure per-Shared Drive sharing restrictions — disable external sharing on drives containing T3/T4 data",
+        "Set up target audiences for departments to control sharing suggestions",
+        "Use Shared Drive membership as your primary access control mechanism",
+        "Train staff to apply classification labels when creating or uploading files",
+        "Restrict download/print/copy on Shared Drives containing sensitive data",
+        "Continue using Gmail Confidential Mode for sensitive external communications",
+        "Enable 2-Step Verification and mobile device management for all users"
+      ]
+    },
+    {
+      "id": "businessPlus",
+      "name": "Business Plus",
+      "equivalent": "Business Plus",
+      "pricePerUser": "$5.04",
+      "nonprofitDiscount": "~70% off retail",
+      "features": {
+        "dlp": { "available": false, "label": "Not available", "detail": "Content scanning and automated DLP rules require Enterprise" },
+        "driveLabels": { "available": true, "label": "Available (manual)", "detail": "Classification labels with manual application to Drive files" },
+        "gmailLabels": { "available": true, "label": "Available (manual)", "detail": "Classification labels with manual application to Gmail messages" },
+        "domainSharing": { "available": true, "label": "Available", "detail": "Can restrict all external sharing at domain level" },
+        "allowlistedDomains": { "available": true, "label": "Available", "detail": "Can allowlist specific domains for sharing" },
+        "sharedDriveControls": { "available": true, "label": "Available", "detail": "Per-Shared Drive sharing and download restrictions" },
+        "targetAudiences": { "available": true, "label": "Available", "detail": "Custom target audiences for sharing control" },
+        "trustRules": { "available": false, "label": "Not available", "detail": "Granular per-user or per-OU sharing rules require Enterprise" },
+        "gmailConfidential": { "available": true, "label": "Available", "detail": "Set expiration, prevent forwarding/copying. Not true encryption." },
+        "irmViewerRestrict": { "available": true, "label": "Available", "detail": "File owners can restrict viewers from downloading/printing/copying" },
+        "irmAdminEnforced": { "available": false, "label": "Not available", "detail": "Admin-enforced IRM via DLP requires Enterprise" },
+        "vault": { "available": true, "label": "Available", "detail": "Google Vault for eDiscovery, retention rules, legal holds, and audit" },
+        "contextAwareAccess": { "available": false, "label": "Not available", "detail": "Location/device-based access rules require Enterprise" },
+        "securityCenter": { "available": false, "label": "Not available", "detail": "Security analytics dashboard requires Enterprise" },
+        "smime": { "available": false, "label": "Not available", "detail": "S/MIME email encryption requires Enterprise" }
+      },
+      "recommendations": [
+        "Configure Vault retention rules to match your data retention policy — especially important for T3/T4 data",
+        "Set up legal holds for any active litigation or investigation",
+        "Use Vault audit reports to monitor who is accessing sensitive data",
+        "Create Drive labels matching classification tiers and train all staff on usage",
+        "Configure per-Shared Drive restrictions for T3/T4 data stores",
+        "Use Vault search and export for compliance reporting and audit requests",
+        "Set up target audiences to manage sharing boundaries between departments",
+        "Consider Enterprise upgrade for DLP auto-classification if you handle large volumes of T4 data"
+      ]
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise Standard",
+      "equivalent": "Enterprise Standard",
+      "pricePerUser": "Contact Google",
+      "nonprofitDiscount": "Significant discount available through Google for Nonprofits",
+      "features": {
+        "dlp": { "available": true, "label": "Available", "detail": "Full DLP: scan content, auto-detect sensitive data (SSN, credit cards, etc.), trigger actions (block sharing, warn users, quarantine)" },
+        "driveLabels": { "available": true, "label": "Available (manual + auto)", "detail": "Manual labels plus DLP-triggered auto-classification based on content scanning" },
+        "gmailLabels": { "available": true, "label": "Available (manual + auto)", "detail": "Manual labels plus DLP-triggered auto-classification for email content" },
+        "domainSharing": { "available": true, "label": "Available", "detail": "Full domain-level sharing controls" },
+        "allowlistedDomains": { "available": true, "label": "Available", "detail": "Domain allowlisting with granular controls" },
+        "sharedDriveControls": { "available": true, "label": "Available", "detail": "Full per-Shared Drive sharing, download, and access restrictions" },
+        "targetAudiences": { "available": true, "label": "Available", "detail": "Custom target audiences with advanced controls" },
+        "trustRules": { "available": true, "label": "Available", "detail": "Granular trust rules: control sharing per user, OU, or group; restrict by file type, label, or destination" },
+        "gmailConfidential": { "available": true, "label": "Available", "detail": "Set expiration, prevent forwarding/copying" },
+        "irmViewerRestrict": { "available": true, "label": "Available", "detail": "File owners can restrict viewers from downloading/printing/copying" },
+        "irmAdminEnforced": { "available": true, "label": "Available", "detail": "Admin can enforce IRM policies via DLP rules — automatically restrict download/print/copy based on content or label" },
+        "vault": { "available": true, "label": "Available", "detail": "Full Google Vault: eDiscovery, retention, legal holds, audit, and export" },
+        "contextAwareAccess": { "available": true, "label": "Available", "detail": "Restrict access based on device security posture, IP address, location, and user identity" },
+        "securityCenter": { "available": true, "label": "Available", "detail": "Security dashboard with threat analytics, investigation tool, and security health recommendations" },
+        "smime": { "available": true, "label": "Available", "detail": "S/MIME email encryption for end-to-end encrypted email with external parties" }
+      },
+      "recommendations": [
+        "Deploy DLP rules to auto-detect and protect sensitive data (SSNs, financial data, health records)",
+        "Configure auto-labeling via DLP to classify files based on content — reduces reliance on manual labeling",
+        "Set up trust rules to enforce per-department sharing boundaries (e.g., HR cannot share externally)",
+        "Enable context-aware access policies for T4 data — restrict to managed devices and corporate networks",
+        "Use admin-enforced IRM to automatically restrict download/print/copy on files matching DLP rules",
+        "Configure S/MIME for staff who regularly send T4 data externally (legal, HR, finance)",
+        "Use Security Center to monitor sharing activity, detect anomalies, and investigate incidents",
+        "Set up Vault retention policies aligned with your data retention schedule",
+        "Create DLP incident reports for compliance monitoring and quarterly reviews",
+        "Use security investigation tool to trace data exposure when incidents occur"
+      ]
+    }
+  ],
+  "implementationChecklist": {
+    "free": [
+      { "step": "Configure domain-wide sharing restrictions", "path": "Admin Console > Apps > Google Workspace > Drive > Sharing settings", "detail": "Set default to 'Only people in your organization can access files' to prevent accidental external sharing" },
+      { "step": "Enable Gmail Confidential Mode", "path": "Admin Console > Apps > Google Workspace > Gmail > User settings", "detail": "Ensure confidential mode is enabled for all users; train staff on when to use it" },
+      { "step": "Set up Shared Drives with team access", "path": "Google Drive > Shared Drives > Create", "detail": "Create drives per department/function (HR, Finance, Programs, etc.). Note: per-drive sharing controls are limited on free tier" },
+      { "step": "Enable 2-Step Verification", "path": "Admin Console > Security > Authentication > 2-Step Verification", "detail": "Enforce for all users with a grace period for setup. Use security keys for admins if possible." },
+      { "step": "Configure mobile device management", "path": "Admin Console > Devices > Mobile & endpoints", "detail": "Enable basic MDM; require screen lock; enable remote wipe capability" },
+      { "step": "Review third-party app access", "path": "Admin Console > Security > API Controls > App access control", "detail": "Block or restrict untrusted third-party apps from accessing organizational data" },
+      { "step": "Train staff on manual file protections", "path": "N/A -- training activity", "detail": "Show staff how to restrict download/print/copy on sensitive files via Share > Settings (gear icon)" },
+      { "step": "Create a data classification reference document", "path": "N/A -- documentation", "detail": "Since Drive labels aren't available, create a shared document explaining your tiers and naming conventions (e.g., prefix filenames with [CONFIDENTIAL])" },
+      { "step": "Set password requirements", "path": "Admin Console > Security > Authentication > Password management", "detail": "Set minimum length to 12+ characters; enable password strength enforcement" },
+      { "step": "Designate super admin backup", "path": "Admin Console > Account > Admin roles", "detail": "Ensure at least 2 people have super admin access to prevent lockout" }
+    ],
+    "businessStandard": [
+      { "step": "All free-tier steps above", "path": "See free tier checklist", "detail": "Complete all foundational steps first before configuring Standard-tier features" },
+      { "step": "Create Drive classification labels", "path": "Admin Console > Apps > Google Workspace > Drive > Labels", "detail": "Create labels matching your tiers: Public, Internal, Confidential, Restricted. Add color coding for visual identification." },
+      { "step": "Configure Gmail classification labels", "path": "Admin Console > Apps > Google Workspace > Gmail > Labels", "detail": "Create matching email classification labels so staff can mark sensitive emails" },
+      { "step": "Set per-Shared Drive sharing restrictions", "path": "Google Drive > Shared Drive > Settings (gear icon)", "detail": "For drives containing T3/T4 data: disable sharing outside the organization, disable download/copy/print for commenters and viewers" },
+      { "step": "Create target audiences", "path": "Admin Console > Directory > Target audiences", "detail": "Create audiences for departments (HR, Finance, Programs) to control sharing suggestions and defaults" },
+      { "step": "Configure Shared Drive access levels", "path": "Google Drive > Shared Drive > Manage members", "detail": "Review membership of each Shared Drive; remove unnecessary access; use Content Manager or Contributor roles instead of Manager where possible" },
+      { "step": "Train staff on label usage", "path": "N/A -- training activity", "detail": "Train all staff to apply appropriate classification labels when creating, uploading, or modifying files" },
+      { "step": "Set up sharing audit process", "path": "Admin Console > Reports > Apps reports > Drive", "detail": "Schedule monthly review of external sharing activity to catch drift" }
+    ],
+    "businessPlus": [
+      { "step": "All Business Standard steps above", "path": "See Business Standard checklist", "detail": "Complete all foundational and Standard-tier steps first" },
+      { "step": "Enable Google Vault", "path": "Admin Console > Apps > Google Workspace > Google Vault", "detail": "Activate Vault and assign Vault privileges to compliance/legal staff" },
+      { "step": "Create retention rules", "path": "Vault > Retention > Custom rules", "detail": "Set retention periods aligned with your data retention policy: e.g., 7 years for financial records, 3 years for program data, indefinite for legal holds" },
+      { "step": "Configure default retention", "path": "Vault > Retention > Default rule", "detail": "Set a default retention period to prevent premature deletion of data that may be needed" },
+      { "step": "Set up legal holds", "path": "Vault > Matters > Create matter", "detail": "Create matters for any active litigation, investigation, or regulatory inquiry; add relevant custodians" },
+      { "step": "Train compliance staff on Vault", "path": "N/A -- training activity", "detail": "Ensure at least 2 staff members know how to search, export, and manage Vault data" },
+      { "step": "Document Vault procedures", "path": "N/A -- documentation", "detail": "Create an internal procedure for legal hold requests, data exports, and retention rule changes" },
+      { "step": "Audit existing data", "path": "Vault > Search", "detail": "Run initial searches to understand what data exists and verify retention rules are capturing expected content" }
+    ],
+    "enterprise": [
+      { "step": "All Business Plus steps above", "path": "See Business Plus checklist", "detail": "Complete all foundational, Standard, and Plus-tier steps first" },
+      { "step": "Design DLP rules", "path": "Admin Console > Security > Data Protection > Manage rules", "detail": "Create rules for common sensitive data: SSNs (XXX-XX-XXXX), credit card numbers, health record identifiers. Start in 'Audit only' mode before enforcing." },
+      { "step": "Configure DLP auto-labeling", "path": "Admin Console > Security > Data Protection > Manage rules", "detail": "Set DLP rules to automatically apply classification labels when sensitive content is detected in Drive or Gmail" },
+      { "step": "Set up trust rules", "path": "Admin Console > Apps > Google Workspace > Drive > Trust rules", "detail": "Configure per-OU sharing restrictions: block HR and Finance from external sharing; allow Programs to share with allowlisted partner domains only" },
+      { "step": "Enable context-aware access", "path": "Admin Console > Security > Context-Aware Access", "detail": "Create access levels based on device management status, IP range, and device encryption. Apply to T4 data applications." },
+      { "step": "Configure admin-enforced IRM", "path": "Admin Console > Security > Data Protection > Manage rules", "detail": "Create DLP rules that automatically disable download/print/copy on files detected as T3/T4" },
+      { "step": "Deploy S/MIME", "path": "Admin Console > Apps > Google Workspace > Gmail > User settings > S/MIME", "detail": "Enable S/MIME and distribute certificates to staff handling T4 data externally (legal, HR, executive team)" },
+      { "step": "Configure Security Center", "path": "Admin Console > Security > Security Center", "detail": "Review security health page; address critical recommendations; set up custom alerts for unusual sharing activity" },
+      { "step": "Create DLP incident workflow", "path": "Admin Console > Security > Data Protection > Manage rules", "detail": "Configure DLP alerts to notify security team; establish triage process for DLP incidents; document escalation path" },
+      { "step": "Run DLP in audit mode first", "path": "Admin Console > Security > Data Protection > Manage rules", "detail": "Run all new DLP rules in audit-only mode for 2-4 weeks; review logs; tune rules to reduce false positives before enforcing" },
+      { "step": "Schedule quarterly access reviews", "path": "N/A -- process", "detail": "Use Security Center and Drive audit logs to review who has access to T3/T4 data stores quarterly" },
+      { "step": "Document DLP exceptions process", "path": "N/A -- documentation", "detail": "Create a formal process for requesting DLP exceptions with approval chain and time-limited waivers" }
+    ]
+  }
+}

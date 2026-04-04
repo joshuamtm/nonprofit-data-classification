@@ -1,4 +1,4 @@
-import { Routes, Route, Link, NavLink, useLocation } from 'react-router-dom'
+import { Routes, Route, Link, NavLink, Navigate, useLocation } from 'react-router-dom'
 import Landing from './pages/Landing'
 import TierOverview from './pages/TierOverview'
 import DataTypeBrowser from './pages/DataTypeBrowser'
@@ -88,6 +88,7 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/guide" element={<Navigate to="/guide/tiers" replace />} />
           <Route path="/guide/tiers" element={<TierOverview />} />
           <Route path="/guide/data-types" element={<DataTypeBrowser />} />
           <Route path="/guide/handling" element={<HandlingMatrix />} />

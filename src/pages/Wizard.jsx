@@ -307,13 +307,21 @@ export default function Wizard() {
           Previous
         </button>
         {step < 6 ? (
-          <button
-            onClick={() => goToStep(step + 1)}
-            disabled={!canAdvance}
-            className="px-5 py-2.5 rounded-lg text-sm font-medium bg-emerald-700 text-white hover:bg-emerald-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-          >
-            Next
-          </button>
+          <div className="flex items-center gap-3">
+            {!canAdvance && step === 1 && (
+              <span className="text-xs text-stone-400">Fill in organization name and staff size to continue</span>
+            )}
+            {!canAdvance && step === 2 && (
+              <span className="text-xs text-stone-400">Select a platform to continue</span>
+            )}
+            <button
+              onClick={() => goToStep(step + 1)}
+              disabled={!canAdvance}
+              className="px-5 py-2.5 rounded-lg text-sm font-medium bg-emerald-700 text-white hover:bg-emerald-800 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+            >
+              Next
+            </button>
+          </div>
         ) : null}
       </div>
     </div>

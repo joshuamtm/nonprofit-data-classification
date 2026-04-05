@@ -84,20 +84,21 @@ export default function Landing() {
           </h1>
           <p className="text-lg md:text-xl text-emerald-100 max-w-3xl mx-auto leading-relaxed mb-10">
             A free, practical guide to classifying and handling sensitive
-            information in your nonprofit &mdash; built for Google Workspace
+            information in your nonprofit &mdash; with implementation guides
+            for Google Workspace and Microsoft 365
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/guide"
+              to="/decision-tree"
               className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-emerald-800 font-semibold rounded-lg shadow-lg hover:bg-emerald-50 transition-colors"
             >
-              Read the Guide
+              Classify Your Data
             </Link>
             <Link
-              to="/tiers"
+              to="/guide/tiers"
               className="inline-flex items-center justify-center px-8 py-3.5 border-2 border-emerald-300 text-white font-semibold rounded-lg hover:bg-emerald-600/30 transition-colors"
             >
-              Explore the Tiers
+              Explore the Guide
             </Link>
           </div>
         </div>
@@ -135,7 +136,7 @@ export default function Landing() {
             return (
               <Link
                 key={tierId}
-                to="/tiers"
+                to="/guide/tiers"
                 className={`block rounded-xl border-2 ${styles.border} ${styles.bg} p-6 hover:shadow-lg transition-shadow group`}
               >
                 <div className="flex items-center gap-2 mb-3">

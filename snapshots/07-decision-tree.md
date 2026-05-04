@@ -1,0 +1,123 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "🛡️ Data Classification Guide" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e8]: 🛡️
+        - generic [ref=e9]: Data Classification Guide
+      - generic [ref=e10]:
+        - link "Tiers" [ref=e11] [cursor=pointer]:
+          - /url: /guide/tiers
+        - link "Data Types" [ref=e12] [cursor=pointer]:
+          - /url: /guide/data-types
+        - link "Handling" [ref=e13] [cursor=pointer]:
+          - /url: /guide/handling
+        - link "Google Workspace" [ref=e14] [cursor=pointer]:
+          - /url: /guide/workspace
+        - link "Microsoft 365" [ref=e15] [cursor=pointer]:
+          - /url: /guide/m365
+        - link "Decision Tree" [ref=e16] [cursor=pointer]:
+          - /url: /decision-tree
+        - link "Policy Wizard" [ref=e17] [cursor=pointer]:
+          - /url: /wizard
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - heading "Data Classification Decision Tree" [level=1] [ref=e21]
+        - paragraph [ref=e22]: Answer a few questions about your data to determine the right classification tier.
+      - generic [ref=e23]:
+        - heading "Interactive Classifier" [level=2] [ref=e24]:
+          - img [ref=e25]
+          - text: Interactive Classifier
+        - generic [ref=e27]:
+          - generic [ref=e29]: Question 1 of 6
+          - heading "Is this information intended for public consumption?" [level=3] [ref=e30]
+          - paragraph [ref=e31]: "Think: would this appear on your website, in a press release, or in publicly available documents?"
+          - generic [ref=e32]:
+            - button "Yes" [ref=e33] [cursor=pointer]
+            - button "No" [ref=e34] [cursor=pointer]
+        - paragraph [ref=e35]: Your answers are not stored. This tool runs entirely in your browser.
+      - generic [ref=e36]:
+        - heading "Quick Reference Flowchart" [level=2] [ref=e37]:
+          - img [ref=e38]
+          - text: Quick Reference Flowchart
+        - paragraph [ref=e40]: A visual overview of the complete classification decision flow.
+        - generic [ref=e43]:
+          - generic [ref=e44]: Is it intended for public consumption?
+          - generic [ref=e45]:
+            - generic [ref=e46]:
+              - generic [ref=e47]:
+                - generic [ref=e49]: "YES"
+                - img [ref=e51]
+              - generic [ref=e53]: T1 — Public
+            - generic [ref=e54]:
+              - generic [ref=e55]:
+                - generic [ref=e57]: "NO"
+                - img [ref=e59]
+              - generic [ref=e61]: Does it identify an individual?
+              - generic [ref=e62]:
+                - generic [ref=e63]:
+                  - generic [ref=e64]:
+                    - generic [ref=e66]: "YES"
+                    - img [ref=e68]
+                  - generic [ref=e70]: Protected by law/regulation?
+                  - generic [ref=e71]:
+                    - generic [ref=e72]:
+                      - generic [ref=e73]:
+                        - generic [ref=e75]: "YES"
+                        - img [ref=e77]
+                      - generic [ref=e79]: T4 — Restricted
+                    - generic [ref=e80]:
+                      - generic [ref=e81]:
+                        - generic [ref=e83]: "NO"
+                        - img [ref=e85]
+                      - generic [ref=e87]: Could cause significant harm?
+                      - generic [ref=e88]:
+                        - generic [ref=e89]:
+                          - generic [ref=e90]:
+                            - generic [ref=e92]: "YES"
+                            - img [ref=e94]
+                          - generic [ref=e96]: T4
+                        - generic [ref=e97]:
+                          - generic [ref=e98]:
+                            - generic [ref=e100]: "NO"
+                            - img [ref=e102]
+                          - generic [ref=e104]: T3
+                - generic [ref=e105]:
+                  - generic [ref=e106]:
+                    - generic [ref=e108]: "NO"
+                    - img [ref=e110]
+                  - generic [ref=e112]: Sensitive org info?
+                  - generic [ref=e113]:
+                    - generic [ref=e114]:
+                      - generic [ref=e115]:
+                        - generic [ref=e117]: "YES"
+                        - img [ref=e119]
+                      - generic [ref=e121]: T3 — Confidential
+                    - generic [ref=e122]:
+                      - generic [ref=e123]:
+                        - generic [ref=e125]: "NO"
+                        - img [ref=e127]
+                      - generic [ref=e129]: Embarrassment or disadvantage?
+                      - generic [ref=e130]:
+                        - generic [ref=e131]:
+                          - generic [ref=e132]:
+                            - generic [ref=e134]: "YES"
+                            - img [ref=e136]
+                          - generic [ref=e138]: T3
+                        - generic [ref=e139]:
+                          - generic [ref=e140]:
+                            - generic [ref=e142]: "NO"
+                            - img [ref=e144]
+                          - generic [ref=e146]: T2 — Internal
+        - paragraph [ref=e147]: When in doubt, classify at the higher (more restrictive) tier. You can always declassify later.
+  - contentinfo [ref=e148]:
+    - generic [ref=e149]:
+      - paragraph [ref=e150]:
+        - text: A free resource from
+        - link "Nonprofits Together" [ref=e151] [cursor=pointer]:
+          - /url: https://nptogether.org
+        - text: "&"
+        - link "Meet the Moment" [ref=e152] [cursor=pointer]:
+          - /url: https://mtm.now
+      - paragraph [ref=e153]: Based on NIST SP 800-60, CIS Controls v8.1, and nonprofit sector best practices. Not legal advice — consult qualified counsel for your specific situation.

@@ -1,0 +1,205 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "🛡️ Data Classification Guide" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e8]: 🛡️
+        - generic [ref=e9]: Data Classification Guide
+      - generic [ref=e10]:
+        - link "Tiers" [ref=e11] [cursor=pointer]:
+          - /url: /guide/tiers
+        - link "Data Types" [ref=e12] [cursor=pointer]:
+          - /url: /guide/data-types
+        - link "Handling" [ref=e13] [cursor=pointer]:
+          - /url: /guide/handling
+        - link "Google Workspace" [ref=e14] [cursor=pointer]:
+          - /url: /guide/workspace
+        - link "Microsoft 365" [ref=e15] [cursor=pointer]:
+          - /url: /guide/m365
+        - link "Decision Tree" [ref=e16] [cursor=pointer]:
+          - /url: /decision-tree
+        - link "Policy Wizard" [ref=e17] [cursor=pointer]:
+          - /url: /wizard
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - heading "Google Workspace Implementation Guide" [level=1] [ref=e21]
+        - paragraph [ref=e22]: Practical guidance for implementing data classification controls in Google Workspace, matched to your nonprofit's license tier.
+      - generic [ref=e23]:
+        - generic [ref=e24]:
+          - button "Nonprofits (Free) $0/user/mo" [ref=e25] [cursor=pointer]:
+            - generic [ref=e26]: Nonprofits (Free)
+            - generic [ref=e27]: $0/user/mo
+          - button "Business Standard $3.50/user/mo" [ref=e28] [cursor=pointer]:
+            - generic [ref=e29]: Business Standard
+            - generic [ref=e30]: $3.50/user/mo
+          - button "Business Plus $5.04/user/mo" [ref=e31] [cursor=pointer]:
+            - generic [ref=e32]: Business Plus
+            - generic [ref=e33]: $5.04/user/mo
+          - button "Enterprise Standard Contact Google/user/mo" [ref=e34] [cursor=pointer]:
+            - generic [ref=e35]: Enterprise Standard
+            - generic [ref=e36]: Contact Google/user/mo
+        - button "Compare all tiers side by side" [ref=e37] [cursor=pointer]:
+          - img [ref=e38]
+          - text: Compare all tiers side by side
+      - generic [ref=e41]:
+        - img [ref=e42]
+        - generic [ref=e44]:
+          - heading "Consider upgrading for stronger data protection" [level=3] [ref=e45]
+          - paragraph [ref=e46]: The free tier lacks Drive classification labels, per-Shared Drive controls, DLP, and Vault. If your organization handles confidential or restricted data (donor PII, client records, financial data), these gaps increase your risk of accidental data exposure.
+          - generic [ref=e47]:
+            - generic [ref=e48]:
+              - strong [ref=e49]: Business Standard
+              - text: ($3.50/user/mo) adds Drive labels and Shared Drive controls
+            - generic [ref=e50]:
+              - strong [ref=e51]: Business Plus
+              - text: ($5.04/user/mo) adds Google Vault for compliance
+      - generic [ref=e52]:
+        - generic [ref=e53]:
+          - generic [ref=e54]:
+            - heading "Feature Availability" [level=2] [ref=e55]
+            - generic [ref=e56]: 4 of 15 features available
+          - generic [ref=e57]:
+            - generic [ref=e58]:
+              - generic [ref=e59]:
+                - paragraph [ref=e60]: Data Loss Prevention (DLP)
+                - paragraph [ref=e61]: Content scanning and automated rules require Enterprise
+              - generic [ref=e63]: Not available
+            - generic [ref=e65]:
+              - generic [ref=e66]:
+                - paragraph [ref=e67]: Drive Classification Labels
+                - paragraph [ref=e68]: Classification labels require Business Standard or higher
+              - generic [ref=e70]: Not available
+            - generic [ref=e72]:
+              - generic [ref=e73]:
+                - paragraph [ref=e74]: Gmail Classification Labels
+                - paragraph [ref=e75]: Gmail classification labels require Business Standard or higher
+              - generic [ref=e77]: Not available
+            - generic [ref=e79]:
+              - generic [ref=e80]:
+                - paragraph [ref=e81]: Domain-wide Sharing Controls
+                - paragraph [ref=e82]: Can restrict all external sharing at domain level
+              - generic [ref=e84]: Available
+            - generic [ref=e86]:
+              - generic [ref=e87]:
+                - paragraph [ref=e88]: Allowlisted Domains
+                - paragraph [ref=e89]: Can allowlist specific domains for sharing
+              - generic [ref=e91]: Basic
+            - generic [ref=e93]:
+              - generic [ref=e94]:
+                - paragraph [ref=e95]: Per-Shared Drive Controls
+                - paragraph [ref=e96]: Cannot restrict sharing per Shared Drive
+              - generic [ref=e98]: Limited
+            - generic [ref=e100]:
+              - generic [ref=e101]:
+                - paragraph [ref=e102]: Target Audiences
+                - paragraph [ref=e103]: Custom sharing groups require Business Standard
+              - generic [ref=e105]: Not available
+            - generic [ref=e107]:
+              - generic [ref=e108]:
+                - paragraph [ref=e109]: Trust Rules (Granular Sharing)
+                - paragraph [ref=e110]: Granular per-user sharing rules require Enterprise
+              - generic [ref=e112]: Not available
+            - generic [ref=e114]:
+              - generic [ref=e115]:
+                - paragraph [ref=e116]: Gmail Confidential Mode
+                - paragraph [ref=e117]: Set expiration, prevent forwarding/copying. Not true encryption.
+              - generic [ref=e119]: Available
+            - generic [ref=e121]:
+              - generic [ref=e122]:
+                - paragraph [ref=e123]: IRM (Viewer Restrictions)
+                - paragraph [ref=e124]: File owners can restrict viewers from downloading/printing/copying
+              - generic [ref=e126]: Available
+            - generic [ref=e128]:
+              - generic [ref=e129]:
+                - paragraph [ref=e130]: IRM (Admin-enforced via DLP)
+                - paragraph [ref=e131]: Admin-enforced IRM via DLP requires Enterprise
+              - generic [ref=e133]: Not available
+            - generic [ref=e135]:
+              - generic [ref=e136]:
+                - paragraph [ref=e137]: Google Vault (eDiscovery)
+                - paragraph [ref=e138]: eDiscovery and retention requires Business Plus
+              - generic [ref=e140]: Not available
+            - generic [ref=e142]:
+              - generic [ref=e143]:
+                - paragraph [ref=e144]: Context-Aware Access
+                - paragraph [ref=e145]: Location/device-based access rules require Enterprise
+              - generic [ref=e147]: Not available
+            - generic [ref=e149]:
+              - generic [ref=e150]:
+                - paragraph [ref=e151]: Security Center
+                - paragraph [ref=e152]: Security analytics dashboard requires Enterprise
+              - generic [ref=e154]: Not available
+            - generic [ref=e156]:
+              - generic [ref=e157]:
+                - paragraph [ref=e158]: S/MIME Email Encryption
+                - paragraph [ref=e159]: S/MIME email encryption requires Enterprise
+              - generic [ref=e161]: Not available
+        - generic [ref=e163]:
+          - heading "Recommendations for Nonprofits (Free)" [level=2] [ref=e164]
+          - generic [ref=e165]:
+            - generic [ref=e166]:
+              - generic [ref=e167]: "1."
+              - paragraph [ref=e168]: Set domain-wide sharing to 'Only people in your organization' as default
+            - generic [ref=e169]:
+              - generic [ref=e170]: "2."
+              - paragraph [ref=e171]: Use Gmail Confidential Mode for sensitive external emails
+            - generic [ref=e172]:
+              - generic [ref=e173]: "3."
+              - paragraph [ref=e174]: Train staff to manually restrict download/print on sensitive files
+            - generic [ref=e175]:
+              - generic [ref=e176]: "4."
+              - paragraph [ref=e177]: Use Shared Drive structure with team-based access for basic access control
+            - generic [ref=e178]:
+              - generic [ref=e179]: "5."
+              - paragraph [ref=e180]: Enable 2-Step Verification for all users (free and critical)
+            - generic [ref=e181]:
+              - generic [ref=e182]: "6."
+              - paragraph [ref=e183]: Enable basic mobile device management (screen lock, remote wipe)
+            - generic [ref=e184]:
+              - generic [ref=e185]: "7."
+              - paragraph [ref=e186]: Consider upgrading to Business Standard ($3.50/user/mo for nonprofits) for Drive labels and Shared Drive controls
+        - generic [ref=e187]:
+          - heading "Implementation Checklist" [level=2] [ref=e188]
+          - paragraph [ref=e189]: Click each step to see the Admin Console path and implementation details.
+          - generic [ref=e190]:
+            - button "Configure domain-wide sharing restrictions" [ref=e192] [cursor=pointer]:
+              - img [ref=e194]
+              - paragraph [ref=e197]: Configure domain-wide sharing restrictions
+            - button "Enable Gmail Confidential Mode" [ref=e199] [cursor=pointer]:
+              - img [ref=e201]
+              - paragraph [ref=e204]: Enable Gmail Confidential Mode
+            - button "Set up Shared Drives with team access" [ref=e206] [cursor=pointer]:
+              - img [ref=e208]
+              - paragraph [ref=e211]: Set up Shared Drives with team access
+            - button "Enable 2-Step Verification" [ref=e213] [cursor=pointer]:
+              - img [ref=e215]
+              - paragraph [ref=e218]: Enable 2-Step Verification
+            - button "Configure mobile device management" [ref=e220] [cursor=pointer]:
+              - img [ref=e222]
+              - paragraph [ref=e225]: Configure mobile device management
+            - button "Review third-party app access" [ref=e227] [cursor=pointer]:
+              - img [ref=e229]
+              - paragraph [ref=e232]: Review third-party app access
+            - button "Train staff on manual file protections" [ref=e234] [cursor=pointer]:
+              - img [ref=e236]
+              - paragraph [ref=e239]: Train staff on manual file protections
+            - button "Create a data classification reference document" [ref=e241] [cursor=pointer]:
+              - img [ref=e243]
+              - paragraph [ref=e246]: Create a data classification reference document
+            - button "Set password requirements" [ref=e248] [cursor=pointer]:
+              - img [ref=e250]
+              - paragraph [ref=e253]: Set password requirements
+            - button "Designate super admin backup" [ref=e255] [cursor=pointer]:
+              - img [ref=e257]
+              - paragraph [ref=e260]: Designate super admin backup
+  - contentinfo [ref=e261]:
+    - generic [ref=e262]:
+      - paragraph [ref=e263]:
+        - text: A free resource from
+        - link "Nonprofits Together" [ref=e264] [cursor=pointer]:
+          - /url: https://nptogether.org
+        - text: "&"
+        - link "Meet the Moment" [ref=e265] [cursor=pointer]:
+          - /url: https://mtm.now
+      - paragraph [ref=e266]: Based on NIST SP 800-60, CIS Controls v8.1, and nonprofit sector best practices. Not legal advice — consult qualified counsel for your specific situation.

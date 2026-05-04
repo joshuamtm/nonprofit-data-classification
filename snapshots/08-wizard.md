@@ -1,0 +1,80 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "🛡️ Data Classification Guide" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e8]: 🛡️
+        - generic [ref=e9]: Data Classification Guide
+      - generic [ref=e10]:
+        - link "Tiers" [ref=e11] [cursor=pointer]:
+          - /url: /guide/tiers
+        - link "Data Types" [ref=e12] [cursor=pointer]:
+          - /url: /guide/data-types
+        - link "Handling" [ref=e13] [cursor=pointer]:
+          - /url: /guide/handling
+        - link "Google Workspace" [ref=e14] [cursor=pointer]:
+          - /url: /guide/workspace
+        - link "Microsoft 365" [ref=e15] [cursor=pointer]:
+          - /url: /guide/m365
+        - link "Decision Tree" [ref=e16] [cursor=pointer]:
+          - /url: /decision-tree
+        - link "Policy Wizard" [ref=e17] [cursor=pointer]:
+          - /url: /wizard
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - heading "Data Classification Policy Wizard" [level=1] [ref=e21]
+        - paragraph [ref=e22]: Answer a few questions and generate a customized data classification policy for your nonprofit.
+      - generic [ref=e23]:
+        - button "Organization" [ref=e24] [cursor=pointer]
+        - button "Platform" [disabled] [ref=e25] [cursor=pointer]
+        - button "Data Inventory" [disabled] [ref=e26] [cursor=pointer]
+        - button "Regulations" [disabled] [ref=e27] [cursor=pointer]
+        - button "Review" [disabled] [ref=e28] [cursor=pointer]
+        - button "Generate" [disabled] [ref=e29] [cursor=pointer]
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - heading "Organization Basics" [level=2] [ref=e33]
+          - paragraph [ref=e34]: Tell us about your organization so we can tailor the policy.
+        - generic [ref=e35]:
+          - generic [ref=e36]: Organization Name *
+          - textbox "e.g., Community Health Alliance" [ref=e37]
+        - generic [ref=e38]:
+          - generic [ref=e39]: Staff Size *
+          - combobox [ref=e40]:
+            - option "Select staff size..." [selected]
+            - option "1-10 employees"
+            - option "11-25 employees"
+            - option "26-50 employees"
+            - option "51-100 employees"
+            - option "101-250 employees"
+            - option "250+ employees"
+        - generic [ref=e41]:
+          - generic [ref=e42]: Sector(s) — select all that apply
+          - generic [ref=e43]:
+            - button "General / Human Services" [ref=e44]
+            - button "Health" [ref=e45]
+            - button "Education" [ref=e46]
+            - button "Housing" [ref=e47]
+            - button "Advocacy / Policy" [ref=e48]
+            - button "Arts & Culture" [ref=e49]
+            - button "Environment" [ref=e50]
+            - button "Religious" [ref=e51]
+          - paragraph [ref=e52]: "\"General / Human Services\" data types are always included."
+        - generic [ref=e53]:
+          - generic [ref=e54]: Primary State of Operation
+          - textbox "e.g., New York" [ref=e55]
+          - paragraph [ref=e56]: Used for state-specific privacy law guidance in your policy.
+      - generic [ref=e57]:
+        - button "Previous" [disabled] [ref=e58]
+        - button "Next" [disabled] [ref=e59]
+  - contentinfo [ref=e60]:
+    - generic [ref=e61]:
+      - paragraph [ref=e62]:
+        - text: A free resource from
+        - link "Nonprofits Together" [ref=e63] [cursor=pointer]:
+          - /url: https://nptogether.org
+        - text: "&"
+        - link "Meet the Moment" [ref=e64] [cursor=pointer]:
+          - /url: https://mtm.now
+      - paragraph [ref=e65]: Based on NIST SP 800-60, CIS Controls v8.1, and nonprofit sector best practices. Not legal advice — consult qualified counsel for your specific situation.

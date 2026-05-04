@@ -1,0 +1,262 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "🛡️ Data Classification Guide" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e8]: 🛡️
+        - generic [ref=e9]: Data Classification Guide
+      - generic [ref=e10]:
+        - link "Tiers" [ref=e11] [cursor=pointer]:
+          - /url: /guide/tiers
+        - link "Data Types" [ref=e12] [cursor=pointer]:
+          - /url: /guide/data-types
+        - link "Handling" [ref=e13] [cursor=pointer]:
+          - /url: /guide/handling
+        - link "Google Workspace" [ref=e14] [cursor=pointer]:
+          - /url: /guide/workspace
+        - link "Microsoft 365" [ref=e15] [cursor=pointer]:
+          - /url: /guide/m365
+        - link "Decision Tree" [ref=e16] [cursor=pointer]:
+          - /url: /decision-tree
+        - link "Policy Wizard" [ref=e17] [cursor=pointer]:
+          - /url: /wizard
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e20]:
+        - heading "Handling Controls Matrix" [level=1] [ref=e21]
+        - paragraph [ref=e22]: Security and handling requirements for each data classification tier. Click any cell to see detailed guidance.
+      - generic [ref=e23]:
+        - heading "Requirement Levels" [level=2] [ref=e24]
+        - generic [ref=e25]:
+          - generic [ref=e28]: None — No requirement
+          - generic [ref=e31]: optional — Optional
+          - generic [ref=e34]: recommended — Recommended
+          - generic [ref=e37]: required — Required
+          - generic [ref=e40]: prohibited — Prohibited
+      - table [ref=e42]:
+        - rowgroup [ref=e43]:
+          - row "Control T1 Public T2 Internal T3 Confidential T4 Restricted" [ref=e44]:
+            - columnheader "Control" [ref=e45]
+            - columnheader "T1 Public" [ref=e46]:
+              - text: T1
+              - text: Public
+            - columnheader "T2 Internal" [ref=e47]:
+              - text: T2
+              - text: Internal
+            - columnheader "T3 Confidential" [ref=e48]:
+              - text: T3
+              - text: Confidential
+            - columnheader "T4 Restricted" [ref=e49]:
+              - text: T4
+              - text: Restricted
+        - rowgroup [ref=e50]:
+          - row "Sharing" [ref=e51]:
+            - cell "Sharing" [ref=e52]
+          - row "NDA Requirement Non-disclosure agreement requirement for external sharing Not required Not required Recommended Required" [ref=e53]:
+            - cell "NDA Requirement Non-disclosure agreement requirement for external sharing" [ref=e54]:
+              - paragraph [ref=e55]: NDA Requirement
+              - paragraph [ref=e56]: Non-disclosure agreement requirement for external sharing
+            - cell "Not required" [ref=e57] [cursor=pointer]:
+              - generic [ref=e59]: Not required
+            - cell "Not required" [ref=e61] [cursor=pointer]:
+              - generic [ref=e63]: Not required
+            - cell "Recommended" [ref=e65] [cursor=pointer]:
+              - generic [ref=e67]: Recommended
+            - cell "Required" [ref=e69] [cursor=pointer]:
+              - generic [ref=e71]: Required
+          - row "Third-Party Sharing Requirements for sharing data with vendors, partners, or contractors No restrictions Professional judgment Agreement required Formal agreement + oversight" [ref=e73]:
+            - cell "Third-Party Sharing Requirements for sharing data with vendors, partners, or contractors" [ref=e74]:
+              - paragraph [ref=e75]: Third-Party Sharing
+              - paragraph [ref=e76]: Requirements for sharing data with vendors, partners, or contractors
+            - cell "No restrictions" [ref=e77] [cursor=pointer]:
+              - generic [ref=e79]: No restrictions
+            - cell "Professional judgment" [ref=e81] [cursor=pointer]:
+              - generic [ref=e83]: Professional judgment
+            - cell "Agreement required" [ref=e85] [cursor=pointer]:
+              - generic [ref=e87]: Agreement required
+            - cell "Formal agreement + oversight" [ref=e89] [cursor=pointer]:
+              - generic [ref=e91]: Formal agreement + oversight
+          - row "Network" [ref=e93]:
+            - cell "Network" [ref=e94]
+          - row "Encryption in Transit Requirements for encrypting data during transmission Standard Required Required Required + Enhanced" [ref=e95]:
+            - cell "Encryption in Transit Requirements for encrypting data during transmission" [ref=e96]:
+              - paragraph [ref=e97]: Encryption in Transit
+              - paragraph [ref=e98]: Requirements for encrypting data during transmission
+            - cell "Standard" [ref=e99] [cursor=pointer]:
+              - generic [ref=e101]: Standard
+            - cell "Required" [ref=e103] [cursor=pointer]:
+              - generic [ref=e105]: Required
+            - cell "Required" [ref=e107] [cursor=pointer]:
+              - generic [ref=e109]: Required
+            - cell "Required + Enhanced" [ref=e111] [cursor=pointer]:
+              - generic [ref=e113]: Required + Enhanced
+          - row "Remote Access Requirements for accessing data remotely (outside the office) No restrictions Secure connection VPN + MFA Managed access only" [ref=e115]:
+            - cell "Remote Access Requirements for accessing data remotely (outside the office)" [ref=e116]:
+              - paragraph [ref=e117]: Remote Access
+              - paragraph [ref=e118]: Requirements for accessing data remotely (outside the office)
+            - cell "No restrictions" [ref=e119] [cursor=pointer]:
+              - generic [ref=e121]: No restrictions
+            - cell "Secure connection" [ref=e123] [cursor=pointer]:
+              - generic [ref=e125]: Secure connection
+            - cell "VPN + MFA" [ref=e127] [cursor=pointer]:
+              - generic [ref=e129]: VPN + MFA
+            - cell "Managed access only" [ref=e131] [cursor=pointer]:
+              - generic [ref=e133]: Managed access only
+          - row "Storage" [ref=e135]:
+            - cell "Storage" [ref=e136]
+          - row "Encryption at Rest Requirements for encrypting stored data Not required Recommended Required Required + Enhanced" [ref=e137]:
+            - cell "Encryption at Rest Requirements for encrypting stored data" [ref=e138]:
+              - paragraph [ref=e139]: Encryption at Rest
+              - paragraph [ref=e140]: Requirements for encrypting stored data
+            - cell "Not required" [ref=e141] [cursor=pointer]:
+              - generic [ref=e143]: Not required
+            - cell "Recommended" [ref=e145] [cursor=pointer]:
+              - generic [ref=e147]: Recommended
+            - cell "Required" [ref=e149] [cursor=pointer]:
+              - generic [ref=e151]: Required
+            - cell "Required + Enhanced" [ref=e153] [cursor=pointer]:
+              - generic [ref=e155]: Required + Enhanced
+          - row "Cloud Storage Requirements for storing data in cloud platforms Any platform Organizational platforms Approved platforms only Restricted approved platforms" [ref=e157]:
+            - cell "Cloud Storage Requirements for storing data in cloud platforms" [ref=e158]:
+              - paragraph [ref=e159]: Cloud Storage
+              - paragraph [ref=e160]: Requirements for storing data in cloud platforms
+            - cell "Any platform" [ref=e161] [cursor=pointer]:
+              - generic [ref=e163]: Any platform
+            - cell "Organizational platforms" [ref=e165] [cursor=pointer]:
+              - generic [ref=e167]: Organizational platforms
+            - cell "Approved platforms only" [ref=e169] [cursor=pointer]:
+              - generic [ref=e171]: Approved platforms only
+            - cell "Restricted approved platforms" [ref=e173] [cursor=pointer]:
+              - generic [ref=e175]: Restricted approved platforms
+          - row "Access" [ref=e177]:
+            - cell "Access" [ref=e178]
+          - row "Access Control Who can access the data and how access is managed Open Role-based Restricted Strictly Controlled" [ref=e179]:
+            - cell "Access Control Who can access the data and how access is managed" [ref=e180]:
+              - paragraph [ref=e181]: Access Control
+              - paragraph [ref=e182]: Who can access the data and how access is managed
+            - cell "Open" [ref=e183] [cursor=pointer]:
+              - generic [ref=e185]: Open
+            - cell "Role-based" [ref=e187] [cursor=pointer]:
+              - generic [ref=e189]: Role-based
+            - cell "Restricted" [ref=e191] [cursor=pointer]:
+              - generic [ref=e193]: Restricted
+            - cell "Strictly Controlled" [ref=e195] [cursor=pointer]:
+              - generic [ref=e197]: Strictly Controlled
+          - row "Devices" [ref=e199]:
+            - cell "Devices" [ref=e200]
+          - row "Mobile Device Controls Requirements for accessing data on mobile devices No restrictions Basic controls Managed devices Strictly managed" [ref=e201]:
+            - cell "Mobile Device Controls Requirements for accessing data on mobile devices" [ref=e202]:
+              - paragraph [ref=e203]: Mobile Device Controls
+              - paragraph [ref=e204]: Requirements for accessing data on mobile devices
+            - cell "No restrictions" [ref=e205] [cursor=pointer]:
+              - generic [ref=e207]: No restrictions
+            - cell "Basic controls" [ref=e209] [cursor=pointer]:
+              - generic [ref=e211]: Basic controls
+            - cell "Managed devices" [ref=e213] [cursor=pointer]:
+              - generic [ref=e215]: Managed devices
+            - cell "Strictly managed" [ref=e217] [cursor=pointer]:
+              - generic [ref=e219]: Strictly managed
+          - row "Communication" [ref=e221]:
+            - cell "Communication" [ref=e222]
+          - row "Email Handling Guidelines for sending data via email No restrictions Use caution Encrypted or confidential Restricted" [ref=e223]:
+            - cell "Email Handling Guidelines for sending data via email" [ref=e224]:
+              - paragraph [ref=e225]: Email Handling
+              - paragraph [ref=e226]: Guidelines for sending data via email
+            - cell "No restrictions" [ref=e227] [cursor=pointer]:
+              - generic [ref=e229]: No restrictions
+            - cell "Use caution" [ref=e231] [cursor=pointer]:
+              - generic [ref=e233]: Use caution
+            - cell "Encrypted or confidential" [ref=e235] [cursor=pointer]:
+              - generic [ref=e237]: Encrypted or confidential
+            - cell "Restricted" [ref=e239] [cursor=pointer]:
+              - generic [ref=e241]: Restricted
+          - row "Instant Messaging Rules for sharing data via Slack, Teams, Google Chat, or similar platforms Permitted Permitted with care Generally prohibited Prohibited" [ref=e243]:
+            - cell "Instant Messaging Rules for sharing data via Slack, Teams, Google Chat, or similar platforms" [ref=e244]:
+              - paragraph [ref=e245]: Instant Messaging
+              - paragraph [ref=e246]: Rules for sharing data via Slack, Teams, Google Chat, or similar platforms
+            - cell "Permitted" [ref=e247] [cursor=pointer]:
+              - generic [ref=e249]: Permitted
+            - cell "Permitted with care" [ref=e251] [cursor=pointer]:
+              - generic [ref=e253]: Permitted with care
+            - cell "Generally prohibited" [ref=e255] [cursor=pointer]:
+              - generic [ref=e257]: Generally prohibited
+            - cell "Prohibited" [ref=e259] [cursor=pointer]:
+              - generic [ref=e261]: Prohibited
+          - row "Technology" [ref=e263]:
+            - cell "Technology" [ref=e264]
+          - row "AI Tool Usage Rules for processing data with AI tools (ChatGPT, Claude, Gemini, Copilot, etc.) No restrictions Use caution Prohibited unless approved Prohibited unless approved" [ref=e265]:
+            - cell "AI Tool Usage Rules for processing data with AI tools (ChatGPT, Claude, Gemini, Copilot, etc.)" [ref=e266]:
+              - paragraph [ref=e267]: AI Tool Usage
+              - paragraph [ref=e268]: Rules for processing data with AI tools (ChatGPT, Claude, Gemini, Copilot, etc.)
+            - cell "No restrictions" [ref=e269] [cursor=pointer]:
+              - generic [ref=e271]: No restrictions
+            - cell "Use caution" [ref=e273] [cursor=pointer]:
+              - generic [ref=e275]: Use caution
+            - cell "Prohibited unless approved" [ref=e277] [cursor=pointer]:
+              - generic [ref=e279]: Prohibited unless approved
+            - cell "Prohibited unless approved" [ref=e281] [cursor=pointer]:
+              - generic [ref=e283]: Prohibited unless approved
+          - row "Physical" [ref=e285]:
+            - cell "Physical" [ref=e286]
+          - row "Physical Mail Requirements for sending data via physical mail or courier Standard mail Standard mail Tracked delivery Secure courier" [ref=e287]:
+            - cell "Physical Mail Requirements for sending data via physical mail or courier" [ref=e288]:
+              - paragraph [ref=e289]: Physical Mail
+              - paragraph [ref=e290]: Requirements for sending data via physical mail or courier
+            - cell "Standard mail" [ref=e291] [cursor=pointer]:
+              - generic [ref=e293]: Standard mail
+            - cell "Standard mail" [ref=e295] [cursor=pointer]:
+              - generic [ref=e297]: Standard mail
+            - cell "Tracked delivery" [ref=e299] [cursor=pointer]:
+              - generic [ref=e301]: Tracked delivery
+            - cell "Secure courier" [ref=e303] [cursor=pointer]:
+              - generic [ref=e305]: Secure courier
+          - row "Printing Restrictions on printing documents containing this data No restrictions Minimize printing Restricted printing Prohibited unless approved" [ref=e307]:
+            - cell "Printing Restrictions on printing documents containing this data" [ref=e308]:
+              - paragraph [ref=e309]: Printing
+              - paragraph [ref=e310]: Restrictions on printing documents containing this data
+            - cell "No restrictions" [ref=e311] [cursor=pointer]:
+              - generic [ref=e313]: No restrictions
+            - cell "Minimize printing" [ref=e315] [cursor=pointer]:
+              - generic [ref=e317]: Minimize printing
+            - cell "Restricted printing" [ref=e319] [cursor=pointer]:
+              - generic [ref=e321]: Restricted printing
+            - cell "Prohibited unless approved" [ref=e323] [cursor=pointer]:
+              - generic [ref=e325]: Prohibited unless approved
+          - row "Lifecycle" [ref=e327]:
+            - cell "Lifecycle" [ref=e328]
+          - row "Data Disposal Requirements for securely deleting or destroying data Standard deletion Empty trash Secure disposal Verified destruction" [ref=e329]:
+            - cell "Data Disposal Requirements for securely deleting or destroying data" [ref=e330]:
+              - paragraph [ref=e331]: Data Disposal
+              - paragraph [ref=e332]: Requirements for securely deleting or destroying data
+            - cell "Standard deletion" [ref=e333] [cursor=pointer]:
+              - generic [ref=e335]: Standard deletion
+            - cell "Empty trash" [ref=e337] [cursor=pointer]:
+              - generic [ref=e339]: Empty trash
+            - cell "Secure disposal" [ref=e341] [cursor=pointer]:
+              - generic [ref=e343]: Secure disposal
+            - cell "Verified destruction" [ref=e345] [cursor=pointer]:
+              - generic [ref=e347]: Verified destruction
+          - row "Documentation" [ref=e349]:
+            - cell "Documentation" [ref=e350]
+          - row "Labeling How to mark and label documents containing this data No labeling needed Recommended Required Required + Visible" [ref=e351]:
+            - cell "Labeling How to mark and label documents containing this data" [ref=e352]:
+              - paragraph [ref=e353]: Labeling
+              - paragraph [ref=e354]: How to mark and label documents containing this data
+            - cell "No labeling needed" [ref=e355] [cursor=pointer]:
+              - generic [ref=e357]: No labeling needed
+            - cell "Recommended" [ref=e359] [cursor=pointer]:
+              - generic [ref=e361]: Recommended
+            - cell "Required" [ref=e363] [cursor=pointer]:
+              - generic [ref=e365]: Required
+            - cell "Required + Visible" [ref=e367] [cursor=pointer]:
+              - generic [ref=e369]: Required + Visible
+  - contentinfo [ref=e371]:
+    - generic [ref=e372]:
+      - paragraph [ref=e373]:
+        - text: A free resource from
+        - link "Nonprofits Together" [ref=e374] [cursor=pointer]:
+          - /url: https://nptogether.org
+        - text: "&"
+        - link "Meet the Moment" [ref=e375] [cursor=pointer]:
+          - /url: https://mtm.now
+      - paragraph [ref=e376]: Based on NIST SP 800-60, CIS Controls v8.1, and nonprofit sector best practices. Not legal advice — consult qualified counsel for your specific situation.

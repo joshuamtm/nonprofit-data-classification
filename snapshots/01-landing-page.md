@@ -1,0 +1,109 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "🛡️ Data Classification Guide" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e8]: 🛡️
+        - generic [ref=e9]: Data Classification Guide
+      - generic [ref=e10]:
+        - link "Tiers" [ref=e11] [cursor=pointer]:
+          - /url: /guide/tiers
+        - link "Data Types" [ref=e12] [cursor=pointer]:
+          - /url: /guide/data-types
+        - link "Handling" [ref=e13] [cursor=pointer]:
+          - /url: /guide/handling
+        - link "Google Workspace" [ref=e14] [cursor=pointer]:
+          - /url: /guide/workspace
+        - link "Microsoft 365" [ref=e15] [cursor=pointer]:
+          - /url: /guide/m365
+        - link "Decision Tree" [ref=e16] [cursor=pointer]:
+          - /url: /decision-tree
+        - link "Policy Wizard" [ref=e17] [cursor=pointer]:
+          - /url: /wizard
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e21]:
+        - paragraph [ref=e22]: Free Nonprofit Resource
+        - heading "Protect Your Mission by Protecting Your Data" [level=1] [ref=e23]
+        - paragraph [ref=e24]: A free, practical guide to classifying and handling sensitive information in your nonprofit — built for Google Workspace
+        - generic [ref=e25]:
+          - link "Read the Guide" [ref=e26] [cursor=pointer]:
+            - /url: /guide
+          - link "Explore the Tiers" [ref=e27] [cursor=pointer]:
+            - /url: /guide/tiers
+      - generic [ref=e29]:
+        - heading "What Is Data Classification?" [level=2] [ref=e30]
+        - paragraph [ref=e31]: Data classification is the practice of organizing your organization's information into tiers based on sensitivity. Each tier has clear rules for who can access it, how it should be stored, and what happens if it's exposed. It turns vague anxiety about data security into concrete, actionable guidance your whole team can follow.
+      - generic [ref=e32]:
+        - heading "Four Tiers of Sensitivity" [level=2] [ref=e33]
+        - paragraph [ref=e34]: Every piece of data in your nonprofit maps to one of these tiers.
+        - generic [ref=e35]:
+          - 'link "🟢 Public Information intended for public consumption. No harm if disclosed; may already be published or required to be publicly available. Risk if disclosed: None Default access: Anyone Learn more →" [ref=e36] [cursor=pointer]':
+            - /url: /guide/tiers
+            - generic [ref=e37]:
+              - generic [ref=e38]: 🟢
+              - generic [ref=e39]: Public
+            - paragraph [ref=e40]: Information intended for public consumption. No harm if disclosed; may already be published or required to be publicly available.
+            - generic [ref=e41]: "Risk if disclosed: None"
+            - generic [ref=e42]: "Default access: Anyone"
+            - paragraph [ref=e43]: Learn more →
+          - 'link "🔵 Internal Operational information for staff and authorized volunteers. Low harm if accidentally disclosed, but not intended for public release. Risk if disclosed: Low Default access: All staff with a need Learn more →" [ref=e44] [cursor=pointer]':
+            - /url: /guide/tiers
+            - generic [ref=e45]:
+              - generic [ref=e46]: 🔵
+              - generic [ref=e47]: Internal
+            - paragraph [ref=e48]: Operational information for staff and authorized volunteers. Low harm if accidentally disclosed, but not intended for public release.
+            - generic [ref=e49]: "Risk if disclosed: Low"
+            - generic [ref=e50]: "Default access: All staff with a need"
+            - paragraph [ref=e51]: Learn more →
+          - 'link "🟡 Confidential Sensitive organizational or personal data. Moderate-to-significant harm if disclosed, including reputational damage, loss of donor trust, or regulatory concern. Risk if disclosed: Moderate to High Default access: Role-based, need-to-know Learn more →" [ref=e52] [cursor=pointer]':
+            - /url: /guide/tiers
+            - generic [ref=e53]:
+              - generic [ref=e54]: 🟡
+              - generic [ref=e55]: Confidential
+            - paragraph [ref=e56]: Sensitive organizational or personal data. Moderate-to-significant harm if disclosed, including reputational damage, loss of donor trust, or regulatory concern.
+            - generic [ref=e57]: "Risk if disclosed: Moderate to High"
+            - generic [ref=e58]: "Default access: Role-based, need-to-know"
+            - paragraph [ref=e59]: Learn more →
+          - 'link "🔴 Restricted Highest sensitivity data. Disclosure could cause severe harm including legal liability, regulatory penalties, threat to personal safety, or identity theft. Risk if disclosed: Severe Default access: Explicit authorization only Learn more →" [ref=e60] [cursor=pointer]':
+            - /url: /guide/tiers
+            - generic [ref=e61]:
+              - generic [ref=e62]: 🔴
+              - generic [ref=e63]: Restricted
+            - paragraph [ref=e64]: Highest sensitivity data. Disclosure could cause severe harm including legal liability, regulatory penalties, threat to personal safety, or identity theft.
+            - generic [ref=e65]: "Risk if disclosed: Severe"
+            - generic [ref=e66]: "Default access: Explicit authorization only"
+            - paragraph [ref=e67]: Learn more →
+      - generic [ref=e69]:
+        - heading "Get Started" [level=2] [ref=e70]
+        - paragraph [ref=e71]: Three ways to put data classification to work at your organization.
+        - generic [ref=e72]:
+          - link "Read the Guide Understand data classification fundamentals, why it matters for nonprofits, and how to build a culture of data stewardship. Start Reading →" [ref=e73] [cursor=pointer]:
+            - /url: /guide
+            - img [ref=e75]
+            - heading "Read the Guide" [level=3] [ref=e77]
+            - paragraph [ref=e78]: Understand data classification fundamentals, why it matters for nonprofits, and how to build a culture of data stewardship.
+            - generic [ref=e79]: Start Reading →
+          - link "Decision Tree Answer a few simple questions about your data and get an instant classification recommendation with handling guidance. Classify Data →" [ref=e80] [cursor=pointer]:
+            - /url: /decision-tree
+            - img [ref=e82]
+            - heading "Decision Tree" [level=3] [ref=e84]
+            - paragraph [ref=e85]: Answer a few simple questions about your data and get an instant classification recommendation with handling guidance.
+            - generic [ref=e86]: Classify Data →
+          - link "Policy Wizard Generate a customized data classification policy document tailored to your nonprofit, ready to adapt and adopt. Generate Policy →" [ref=e87] [cursor=pointer]:
+            - /url: /wizard
+            - img [ref=e89]
+            - heading "Policy Wizard" [level=3] [ref=e91]
+            - paragraph [ref=e92]: Generate a customized data classification policy document tailored to your nonprofit, ready to adapt and adopt.
+            - generic [ref=e93]: Generate Policy →
+      - paragraph [ref=e95]: Built for nonprofit professionals who want to protect their people and their mission. No login required. No data collected.
+  - contentinfo [ref=e96]:
+    - generic [ref=e97]:
+      - paragraph [ref=e98]:
+        - text: A free resource from
+        - link "Nonprofits Together" [ref=e99] [cursor=pointer]:
+          - /url: https://nptogether.org
+        - text: "&"
+        - link "Meet the Moment" [ref=e100] [cursor=pointer]:
+          - /url: https://mtm.now
+      - paragraph [ref=e101]: Based on NIST SP 800-60, CIS Controls v8.1, and nonprofit sector best practices. Not legal advice — consult qualified counsel for your specific situation.

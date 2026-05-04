@@ -1,0 +1,166 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e6]:
+      - link "🛡️ Data Classification Guide" [ref=e7] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e8]: 🛡️
+        - generic [ref=e9]: Data Classification Guide
+      - generic [ref=e10]:
+        - link "Tiers" [ref=e11] [cursor=pointer]:
+          - /url: /guide/tiers
+        - link "Data Types" [ref=e12] [cursor=pointer]:
+          - /url: /guide/data-types
+        - link "Handling" [ref=e13] [cursor=pointer]:
+          - /url: /guide/handling
+        - link "Google Workspace" [ref=e14] [cursor=pointer]:
+          - /url: /guide/workspace
+        - link "Microsoft 365" [ref=e15] [cursor=pointer]:
+          - /url: /guide/m365
+        - link "Decision Tree" [ref=e16] [cursor=pointer]:
+          - /url: /decision-tree
+        - link "Policy Wizard" [ref=e17] [cursor=pointer]:
+          - /url: /wizard
+  - main [ref=e18]:
+    - generic [ref=e19]:
+      - generic [ref=e21]:
+        - link "Back to Home" [ref=e22] [cursor=pointer]:
+          - /url: /
+          - img [ref=e23]
+          - text: Back to Home
+        - heading "Classification Tiers" [level=1] [ref=e25]
+        - paragraph [ref=e26]: Every piece of data your nonprofit handles falls into one of four sensitivity tiers. Understanding these tiers is the foundation of a practical data protection strategy.
+      - generic [ref=e28]:
+        - article [ref=e29]:
+          - heading "T1 — Public" [level=2] [ref=e32]
+          - generic [ref=e33]:
+            - paragraph [ref=e34]: Information intended for public consumption. No harm if disclosed; may already be published or required to be publicly available.
+            - generic [ref=e35]:
+              - generic [ref=e36]:
+                - paragraph [ref=e37]: Risk if Disclosed
+                - paragraph [ref=e38]: None
+              - generic [ref=e39]:
+                - paragraph [ref=e40]: Default Access
+                - paragraph [ref=e41]: Anyone
+              - generic [ref=e42]:
+                - paragraph [ref=e43]: Handling Summary
+                - paragraph [ref=e44]: Can be shared freely. No special storage or access controls required. Suitable for websites, annual reports, and public communications.
+            - generic [ref=e45]:
+              - heading "Example Data Types" [level=3] [ref=e46]
+              - list [ref=e47]:
+                - listitem [ref=e48]:
+                  - generic [ref=e50]: Published donor lists (annual report, honor roll)Donor & Funder Data
+                - listitem [ref=e51]:
+                  - generic [ref=e53]: Fundraising campaign totals and public goal progressDonor & Funder Data
+                - listitem [ref=e54]:
+                  - generic [ref=e56]: Aggregated program outcomes and impact statisticsProgram Participant / Client / Beneficiary Data
+                - listitem [ref=e57]:
+                  - generic [ref=e59]: Program descriptions and service offeringsProgram Participant / Client / Beneficiary Data
+                - listitem [ref=e60]:
+                  - generic [ref=e62]: Published leadership bios and headshotsEmployee & HR Data
+            - link "View full handling requirements for Public data →" [ref=e64] [cursor=pointer]:
+              - /url: /handling-matrix
+        - article [ref=e65]:
+          - heading "T2 — Internal" [level=2] [ref=e68]
+          - generic [ref=e69]:
+            - paragraph [ref=e70]: Operational information for staff and authorized volunteers. Low harm if accidentally disclosed, but not intended for public release.
+            - generic [ref=e71]:
+              - generic [ref=e72]:
+                - paragraph [ref=e73]: Risk if Disclosed
+                - paragraph [ref=e74]: Low
+              - generic [ref=e75]:
+                - paragraph [ref=e76]: Default Access
+                - paragraph [ref=e77]: All staff with a need
+              - generic [ref=e78]:
+                - paragraph [ref=e79]: Handling Summary
+                - paragraph [ref=e80]: Share within the organization. Store on standard internal systems (Google Drive with org-wide access). No external sharing without review.
+            - generic [ref=e81]:
+              - heading "Example Data Types" [level=3] [ref=e82]
+              - list [ref=e83]:
+                - listitem [ref=e84]:
+                  - generic [ref=e86]: De-identified participant data for reportingProgram Participant / Client / Beneficiary Data
+                - listitem [ref=e87]:
+                  - generic [ref=e89]: Staff directory (name, title, work email)Employee & HR Data
+                - listitem [ref=e90]:
+                  - generic [ref=e92]: Annual budget (board-approved summary)Financial Data
+                - listitem [ref=e93]:
+                  - generic [ref=e95]: Board meeting minutes (public portions)Legal & Governance Data
+                - listitem [ref=e96]:
+                  - generic [ref=e98]: BylawsLegal & Governance Data
+            - link "View full handling requirements for Internal data →" [ref=e100] [cursor=pointer]:
+              - /url: /handling-matrix
+        - article [ref=e101]:
+          - heading "T3 — Confidential" [level=2] [ref=e104]
+          - generic [ref=e105]:
+            - paragraph [ref=e106]: Sensitive organizational or personal data. Moderate-to-significant harm if disclosed, including reputational damage, loss of donor trust, or regulatory concern.
+            - generic [ref=e107]:
+              - generic [ref=e108]:
+                - paragraph [ref=e109]: Risk if Disclosed
+                - paragraph [ref=e110]: Moderate to High
+              - generic [ref=e111]:
+                - paragraph [ref=e112]: Default Access
+                - paragraph [ref=e113]: Role-based, need-to-know
+              - generic [ref=e114]:
+                - paragraph [ref=e115]: Handling Summary
+                - paragraph [ref=e116]: Need-to-know access only. Store in access-controlled folders. Encrypt in transit. Review sharing permissions regularly. Log access where possible.
+            - generic [ref=e117]:
+              - heading "Example Data Types" [level=3] [ref=e118]
+              - list [ref=e119]:
+                - listitem [ref=e120]:
+                  - generic [ref=e122]: Donor name and giving history/totalsDonor & Funder Data
+                - listitem [ref=e123]:
+                  - generic [ref=e125]: Donor contact information (address, phone, email)Donor & Funder Data
+                - listitem [ref=e126]:
+                  - generic [ref=e128]: Wealth screening and capacity scoresDonor & Funder Data
+                - listitem [ref=e129]:
+                  - generic [ref=e131]: Donor communication preferences and opt-outsDonor & Funder Data
+                - listitem [ref=e132]:
+                  - generic [ref=e134]: Major gift solicitation strategies and cultivation plansDonor & Funder Data
+            - link "View full handling requirements for Confidential data →" [ref=e136] [cursor=pointer]:
+              - /url: /handling-matrix
+        - article [ref=e137]:
+          - heading "T4 — Restricted" [level=2] [ref=e140]
+          - generic [ref=e141]:
+            - paragraph [ref=e142]: Highest sensitivity data. Disclosure could cause severe harm including legal liability, regulatory penalties, threat to personal safety, or identity theft.
+            - generic [ref=e143]:
+              - generic [ref=e144]:
+                - paragraph [ref=e145]: Risk if Disclosed
+                - paragraph [ref=e146]: Severe
+              - generic [ref=e147]:
+                - paragraph [ref=e148]: Default Access
+                - paragraph [ref=e149]: Explicit authorization only
+              - generic [ref=e150]:
+                - paragraph [ref=e151]: Handling Summary
+                - paragraph [ref=e152]: Explicit authorization required for every access. Encrypt at rest and in transit. Audit all access. Minimize retention. Breach notification may be legally required.
+            - generic [ref=e153]:
+              - heading "Example Data Types" [level=3] [ref=e154]
+              - list [ref=e155]:
+                - listitem [ref=e156]:
+                  - generic [ref=e158]: Donor payment method, credit card, and ACH/bank dataDonor & Funder Data
+                - listitem [ref=e159]:
+                  - generic [ref=e161]: Planned giving and estate/bequest documentationDonor & Funder Data
+                - listitem [ref=e162]:
+                  - generic [ref=e164]: 501(c)(4) donor identity and Schedule B dataDonor & Funder Data
+                - listitem [ref=e165]:
+                  - generic [ref=e167]: Client SSN or government-issued ID numbersProgram Participant / Client / Beneficiary Data
+                - listitem [ref=e168]:
+                  - generic [ref=e170]: Client immigration status and documentationProgram Participant / Client / Beneficiary Data
+            - link "View full handling requirements for Restricted data →" [ref=e172] [cursor=pointer]:
+              - /url: /handling-matrix
+      - generic [ref=e174]:
+        - heading "Not sure where your data falls?" [level=2] [ref=e175]
+        - paragraph [ref=e176]: Use the decision tree to classify specific data types, or browse the full taxonomy by category.
+        - generic [ref=e177]:
+          - link "Use the Decision Tree" [ref=e178] [cursor=pointer]:
+            - /url: /decision-tree
+          - link "Read the Full Guide" [ref=e179] [cursor=pointer]:
+            - /url: /guide
+  - contentinfo [ref=e180]:
+    - generic [ref=e181]:
+      - paragraph [ref=e182]:
+        - text: A free resource from
+        - link "Nonprofits Together" [ref=e183] [cursor=pointer]:
+          - /url: https://nptogether.org
+        - text: "&"
+        - link "Meet the Moment" [ref=e184] [cursor=pointer]:
+          - /url: https://mtm.now
+      - paragraph [ref=e185]: Based on NIST SP 800-60, CIS Controls v8.1, and nonprofit sector best practices. Not legal advice — consult qualified counsel for your specific situation.

@@ -225,7 +225,7 @@ function buildCoverSection(ws) {
       alignment: AlignmentType.CENTER,
       spacing: { after: 80 },
       children: [
-        body('Prepared with the Nonprofit Data Classification Guide — nptogether.org', {
+        body('Prepared with the Nonprofit Data Classification Guide — a free resource from Meet the Moment (mtm.now)', {
           color: '78716c',
           italics: true,
         }),
@@ -433,6 +433,17 @@ function buildHandlingSection() {
 
 function buildPlatformSection(ws) {
   const sections = [heading1('5. Platform-Specific Controls')]
+
+  // Health-sector organizations get an explicit BAA callout for their platform
+  const healthSector = (ws.sectors || []).includes('health')
+  if (healthSector && (ws.platform === 'google' || ws.platform === 'microsoft')) {
+    const vendor = ws.platform === 'google' ? 'Google Workspace' : 'Microsoft 365'
+    sections.push(
+      bodyParagraph(
+        `Because ${ws.orgName} handles health information, HIPAA may apply. Before storing or processing protected health information (PHI) in ${vendor}, execute a Business Associate Agreement (BAA) with the vendor — both Google and Microsoft offer BAAs at no additional cost through the admin console — and confirm that PHI is used only in the services covered by that BAA. Consult qualified counsel to confirm whether your organization is a HIPAA covered entity or business associate.`
+      )
+    )
+  }
 
   if (ws.platform === 'google') {
     const tier = ws.workspaceTier
@@ -680,9 +691,35 @@ function buildIncidentSection() {
   ]
 }
 
+function buildAdoptionSection(ws) {
+  const today = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+  return [
+    heading1('9. Policy Adoption & Review'),
+    bodyParagraph(
+      `This policy takes effect upon formal adoption by ${ws.orgName}'s leadership or board of directors. It must be reviewed at least annually, and whenever the organization adopts new systems, launches new programs that collect data, or becomes subject to new regulatory requirements. Reviews and revisions are recorded in the version history below.`
+    ),
+    emptyParagraph(),
+    bodyParagraph('Approved by (name): _____________________________________'),
+    emptyParagraph(),
+    bodyParagraph('Title: ________________________________________________'),
+    emptyParagraph(),
+    bodyParagraph('Signature: ___________________________________________'),
+    emptyParagraph(),
+    bodyParagraph('Date adopted: ________________________________________'),
+    emptyParagraph(),
+    bodyParagraph('Next scheduled review: _______________________________'),
+    emptyParagraph(),
+    heading2('9.1 Version History'),
+    bodyParagraph(`Version 1.0 — Generated ${today} — Initial draft prepared for adoption.`),
+    bodyParagraph('Version ____ — Date: ____________ — Changes: _________________________________'),
+    bodyParagraph('Version ____ — Date: ____________ — Changes: _________________________________'),
+    pageBreak(),
+  ]
+}
+
 function buildAcknowledgmentSection(ws) {
   return [
-    heading1('9. Policy Acknowledgment'),
+    heading1('10. Policy Acknowledgment'),
     bodyParagraph(
       'All employees, contractors, and volunteers with access to organizational data must acknowledge this policy annually and upon initial onboarding.'
     ),
@@ -748,7 +785,7 @@ function buildAppendixSection(ws) {
     SOX: 'The Sarbanes-Oxley Act whistleblower provisions protect employees who report fraud or misconduct. While primarily a corporate regulation, the whistleblower protections apply to nonprofits.',
   }
 
-  const sections = [heading1('10. Appendix — Regulatory Requirements')]
+  const sections = [heading1('11. Appendix — Regulatory Requirements')]
 
   if (regSet.size === 0 && (!ws.additionalRegulations || ws.additionalRegulations.length === 0)) {
     sections.push(
@@ -835,6 +872,7 @@ export async function generatePolicy(wizardState) {
           ...buildRolesSection(ws),
           ...buildLabelingSection(ws),
           ...buildIncidentSection(),
+          ...buildAdoptionSection(ws),
           ...buildAcknowledgmentSection(ws),
           ...buildAppendixSection(ws),
         ],

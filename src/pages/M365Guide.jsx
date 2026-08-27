@@ -22,9 +22,9 @@ const featureLabels = {
 const featureKeys = Object.keys(featureLabels);
 
 const tierColors = {
-  businessBasic: { bg: 'bg-green-50', border: 'border-green-300', active: 'bg-green-600 text-white', ring: 'ring-green-300' },
+  businessBasic: { bg: 'bg-green-50', border: 'border-green-300', active: 'bg-green-700 text-white', ring: 'ring-green-300' },
   businessStandard: { bg: 'bg-blue-50', border: 'border-blue-300', active: 'bg-blue-600 text-white', ring: 'ring-blue-300' },
-  businessPremium: { bg: 'bg-amber-50', border: 'border-amber-300', active: 'bg-amber-600 text-white', ring: 'ring-amber-300' },
+  businessPremium: { bg: 'bg-amber-50', border: 'border-amber-300', active: 'bg-amber-700 text-white', ring: 'ring-amber-300' },
   e3: { bg: 'bg-purple-50', border: 'border-purple-300', active: 'bg-purple-600 text-white', ring: 'ring-purple-300' },
   e5: { bg: 'bg-rose-50', border: 'border-rose-300', active: 'bg-rose-600 text-white', ring: 'ring-rose-300' },
 };
@@ -109,19 +109,19 @@ function ChecklistStep({ step }) {
         className="w-full flex items-start gap-3 p-4 text-left cursor-pointer"
       >
         <span className={`mt-0.5 flex-shrink-0 transition-transform ${open ? 'rotate-90' : ''}`}>
-          <svg className="w-4 h-4 text-stone-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+          <svg className="w-4 h-4 text-stone-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
           </svg>
         </span>
         <div className="flex-1">
-          <p className={`font-medium ${isReference ? 'text-stone-500 italic' : 'text-stone-800'}`}>{step.step}</p>
+          <p className={`font-medium ${isReference ? 'text-stone-600 italic' : 'text-stone-800'}`}>{step.step}</p>
         </div>
       </button>
       {open && (
         <div className="px-4 pb-4 pl-11 space-y-2">
           {step.path && !step.path.startsWith('N/A') && !isReference && (
             <div className="flex items-start gap-2">
-              <span className="text-xs font-semibold text-stone-400 uppercase tracking-wider mt-0.5 flex-shrink-0">Path:</span>
+              <span className="text-xs font-semibold text-stone-600 uppercase tracking-wider mt-0.5 flex-shrink-0">Path:</span>
               <code className="text-sm text-blue-700 bg-blue-100 px-2 py-0.5 rounded font-mono break-all">{step.path}</code>
             </div>
           )}
@@ -153,7 +153,7 @@ export default function M365Guide() {
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-3xl font-bold text-stone-800 mb-2">Microsoft 365 Implementation Guide</h1>
-        <p className="text-stone-500 text-lg max-w-3xl">
+        <p className="text-stone-600 text-lg max-w-3xl">
           Practical guidance for implementing data classification controls in Microsoft 365,
           matched to your nonprofit's license tier.
         </p>
@@ -176,7 +176,7 @@ export default function M365Guide() {
                 }`}
               >
                 <span className="block">{tier.name}</span>
-                <span className={`block text-xs mt-0.5 ${isActive ? 'opacity-80' : 'text-stone-400'}`}>
+                <span className={`block text-xs mt-0.5 ${isActive ? '' : 'text-stone-600'}`}>
                   {tier.pricePerUser}/user/mo
                   {tier.userCap ? ` (max ${tier.userCap})` : ''}
                 </span>
@@ -236,7 +236,7 @@ export default function M365Guide() {
                   {m365Data.tiers.map(tier => (
                     <th key={tier.id} className="text-center py-3 px-3 font-semibold text-stone-600 border-b border-stone-200">
                       <span className="block">{tier.name.replace(' (Donated)', '').replace('Enterprise ', '')}</span>
-                      <span className="block text-xs font-normal text-stone-400">{tier.pricePerUser}/user</span>
+                      <span className="block text-xs font-normal text-stone-600">{tier.pricePerUser}/user</span>
                     </th>
                   ))}
                 </tr>
@@ -257,7 +257,7 @@ export default function M365Guide() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-stone-400 mt-2">Hover over icons to see details. Feature availability from Microsoft documentation. Pricing reflects nonprofit rates as of early 2026.</p>
+          <p className="text-xs text-stone-600 mt-2">Hover over icons to see details. Feature availability from Microsoft documentation. Pricing reflects nonprofit rates as of early 2026.</p>
         </div>
       )}
 
@@ -268,7 +268,7 @@ export default function M365Guide() {
           <section>
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-stone-800">Feature Availability</h2>
-              <span className="text-sm text-stone-400">
+              <span className="text-sm text-stone-600">
                 {availableCount} of {totalCount} features available
               </span>
             </div>
@@ -285,7 +285,7 @@ export default function M365Guide() {
                   >
                     <div className="flex-1 min-w-0">
                       <p className="font-medium text-stone-800 text-sm">{featureLabels[key]}</p>
-                      <p className="text-xs text-stone-400 mt-0.5 leading-relaxed">{feature.detail}</p>
+                      <p className="text-xs text-stone-600 mt-0.5 leading-relaxed">{feature.detail}</p>
                     </div>
                     <div className="flex-shrink-0">
                       <AvailabilityBadge feature={feature} />
@@ -298,8 +298,8 @@ export default function M365Guide() {
 
           {/* Tier info note */}
           {selectedTier.nonprofitNote && (
-            <div className="flex items-start gap-2 text-sm text-stone-500 bg-stone-50 rounded-lg px-4 py-3 border border-stone-200">
-              <svg className="w-4 h-4 text-stone-400 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+            <div className="flex items-start gap-2 text-sm text-stone-600 bg-stone-50 rounded-lg px-4 py-3 border border-stone-200">
+              <svg className="w-4 h-4 text-stone-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
               </svg>
               <span>{selectedTier.nonprofitNote}{selectedTier.userCap ? `. Business plans are capped at ${selectedTier.userCap} users — larger organizations should consider E3 or E5.` : ''}</span>
@@ -312,7 +312,7 @@ export default function M365Guide() {
             <div className="grid gap-3">
               {selectedTier.recommendations.map((rec, idx) => (
                 <div key={idx} className="flex items-start gap-3 bg-blue-50 border border-blue-200 rounded-lg px-4 py-3">
-                  <span className="text-blue-500 font-bold text-sm mt-0.5 flex-shrink-0">{idx + 1}.</span>
+                  <span className="text-blue-700 font-bold text-sm mt-0.5 flex-shrink-0">{idx + 1}.</span>
                   <p className="text-sm text-stone-700 leading-relaxed">{rec}</p>
                 </div>
               ))}
@@ -322,7 +322,7 @@ export default function M365Guide() {
           {/* Implementation Checklist */}
           <section>
             <h2 className="text-xl font-semibold text-stone-800 mb-2">Implementation Checklist</h2>
-            <p className="text-sm text-stone-400 mb-4">
+            <p className="text-sm text-stone-600 mb-4">
               Click each step to see the admin portal path and implementation details.
             </p>
             <div className="space-y-2">

@@ -22,9 +22,9 @@ const featureLabels = {
 const featureKeys = Object.keys(featureLabels);
 
 const tierColors = {
-  free: { bg: 'bg-green-50', border: 'border-green-300', active: 'bg-green-600 text-white', ring: 'ring-green-300' },
+  free: { bg: 'bg-green-50', border: 'border-green-300', active: 'bg-green-700 text-white', ring: 'ring-green-300' },
   businessStandard: { bg: 'bg-blue-50', border: 'border-blue-300', active: 'bg-blue-600 text-white', ring: 'ring-blue-300' },
-  businessPlus: { bg: 'bg-amber-50', border: 'border-amber-300', active: 'bg-amber-600 text-white', ring: 'ring-amber-300' },
+  businessPlus: { bg: 'bg-amber-50', border: 'border-amber-300', active: 'bg-amber-700 text-white', ring: 'ring-amber-300' },
   enterprise: { bg: 'bg-purple-50', border: 'border-purple-300', active: 'bg-purple-600 text-white', ring: 'ring-purple-300' },
 };
 
@@ -83,19 +83,19 @@ function ChecklistStep({ step }) {
         className="w-full flex items-start gap-3 p-4 text-left cursor-pointer"
       >
         <span className={`mt-0.5 flex-shrink-0 transition-transform ${open ? 'rotate-90' : ''}`}>
-          <svg className="w-4 h-4 text-stone-400" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+          <svg className="w-4 h-4 text-stone-600" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
           </svg>
         </span>
         <div className="flex-1">
-          <p className={`font-medium ${isReference ? 'text-stone-500 italic' : 'text-stone-800'}`}>{step.step}</p>
+          <p className={`font-medium ${isReference ? 'text-stone-600 italic' : 'text-stone-800'}`}>{step.step}</p>
         </div>
       </button>
       {open && (
         <div className="px-4 pb-4 pl-11 space-y-2">
           {step.path && step.path !== 'N/A -- training activity' && step.path !== 'N/A -- documentation' && step.path !== 'N/A -- process' && !isReference && (
             <div className="flex items-start gap-2">
-              <span className="text-xs font-semibold text-stone-400 uppercase tracking-wider mt-0.5 flex-shrink-0">Path:</span>
+              <span className="text-xs font-semibold text-stone-600 uppercase tracking-wider mt-0.5 flex-shrink-0">Path:</span>
               <code className="text-sm text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded font-mono break-all">{step.path}</code>
             </div>
           )}
@@ -127,7 +127,7 @@ export default function WorkspaceGuide() {
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-3xl font-bold text-stone-800 mb-2">Google Workspace Implementation Guide</h1>
-        <p className="text-stone-500 text-lg max-w-3xl">
+        <p className="text-stone-600 text-lg max-w-3xl">
           Practical guidance for implementing data classification controls in Google Workspace,
           matched to your nonprofit's license tier.
         </p>
@@ -150,7 +150,7 @@ export default function WorkspaceGuide() {
                 }`}
               >
                 <span className="block">{tier.name}</span>
-                <span className={`block text-xs mt-0.5 ${isActive ? 'opacity-80' : 'text-stone-400'}`}>
+                <span className={`block text-xs mt-0.5 ${isActive ? '' : 'text-stone-600'}`}>
                   {tier.pricePerUser}/user/mo
                 </span>
               </button>
@@ -161,7 +161,7 @@ export default function WorkspaceGuide() {
         {/* Comparison toggle */}
         <button
           onClick={() => setShowComparison(!showComparison)}
-          className="text-sm text-emerald-600 hover:text-emerald-700 font-medium flex items-center gap-1.5 cursor-pointer"
+          className="text-sm text-emerald-700 hover:text-emerald-800 font-medium flex items-center gap-1.5 cursor-pointer"
         >
           <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25a2.25 2.25 0 01-2.25-2.25v-2.25z" />
@@ -208,7 +208,7 @@ export default function WorkspaceGuide() {
                   {workspaceData.tiers.map(tier => (
                     <th key={tier.id} className="text-center py-3 px-3 font-semibold text-stone-600 border-b border-stone-200">
                       <span className="block">{tier.name.replace(' (Free)', '').replace('Nonprofits', 'Free')}</span>
-                      <span className="block text-xs font-normal text-stone-400">{tier.pricePerUser}/user</span>
+                      <span className="block text-xs font-normal text-stone-600">{tier.pricePerUser}/user</span>
                     </th>
                   ))}
                 </tr>
@@ -229,7 +229,7 @@ export default function WorkspaceGuide() {
               </tbody>
             </table>
           </div>
-          <p className="text-xs text-stone-400 mt-2">Hover over icons to see details. Feature availability from Google Workspace documentation.</p>
+          <p className="text-xs text-stone-600 mt-2">Hover over icons to see details. Feature availability from Google Workspace documentation.</p>
         </div>
       )}
 
@@ -240,7 +240,7 @@ export default function WorkspaceGuide() {
           <section>
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-xl font-semibold text-stone-800">Feature Availability</h2>
-              <span className="text-sm text-stone-400">
+              <span className="text-sm text-stone-600">
                 {availableCount} of {totalCount} features available
               </span>
             </div>
@@ -257,7 +257,7 @@ export default function WorkspaceGuide() {
                   >
                     <div className="flex-1 min-w-0">
                       <p className="font-medium text-stone-800 text-sm">{featureLabels[key]}</p>
-                      <p className="text-xs text-stone-400 mt-0.5 leading-relaxed">{feature.detail}</p>
+                      <p className="text-xs text-stone-600 mt-0.5 leading-relaxed">{feature.detail}</p>
                     </div>
                     <div className="flex-shrink-0">
                       <AvailabilityBadge feature={feature} />
@@ -274,7 +274,7 @@ export default function WorkspaceGuide() {
             <div className="grid gap-3">
               {selectedTier.recommendations.map((rec, idx) => (
                 <div key={idx} className="flex items-start gap-3 bg-emerald-50 border border-emerald-200 rounded-lg px-4 py-3">
-                  <span className="text-emerald-500 font-bold text-sm mt-0.5 flex-shrink-0">{idx + 1}.</span>
+                  <span className="text-emerald-700 font-bold text-sm mt-0.5 flex-shrink-0">{idx + 1}.</span>
                   <p className="text-sm text-stone-700 leading-relaxed">{rec}</p>
                 </div>
               ))}
@@ -284,7 +284,7 @@ export default function WorkspaceGuide() {
           {/* Implementation Checklist */}
           <section>
             <h2 className="text-xl font-semibold text-stone-800 mb-2">Implementation Checklist</h2>
-            <p className="text-sm text-stone-400 mb-4">
+            <p className="text-sm text-stone-600 mb-4">
               Click each step to see the Admin Console path and implementation details.
             </p>
             <div className="space-y-2">

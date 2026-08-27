@@ -7,7 +7,7 @@ const tierCardStyles = {
   T1: {
     border: 'border-green-300',
     bg: 'bg-green-50',
-    badge: 'bg-green-600 text-white',
+    badge: 'bg-green-700 text-white',
     icon: '🟢',
   },
   T2: {
@@ -19,7 +19,7 @@ const tierCardStyles = {
   T3: {
     border: 'border-amber-300',
     bg: 'bg-amber-50',
-    badge: 'bg-amber-600 text-white',
+    badge: 'bg-amber-700 text-white',
     icon: '🟡',
   },
   T4: {
@@ -89,10 +89,16 @@ export default function Landing() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              to="/decision-tree"
+              to="/wizard"
               className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-emerald-800 font-semibold rounded-lg shadow-lg hover:bg-emerald-50 transition-colors"
             >
-              Classify Your Data
+              Build Your Policy
+            </Link>
+            <Link
+              to="/decision-tree"
+              className="inline-flex items-center justify-center px-8 py-3.5 border-2 border-emerald-300 text-white font-semibold rounded-lg hover:bg-emerald-600/30 transition-colors"
+            >
+              What Tier Is My Data?
             </Link>
             <Link
               to="/guide/tiers"
@@ -101,6 +107,9 @@ export default function Landing() {
               Explore the Guide
             </Link>
           </div>
+          <p className="mt-6 text-emerald-200 text-sm">
+            Runs entirely in your browser &mdash; nothing you enter leaves your device. No sign-up, no tracking.
+          </p>
         </div>
       </section>
 
@@ -126,7 +135,7 @@ export default function Landing() {
         <h2 className="text-2xl font-bold text-stone-800 text-center mb-2">
           Four Tiers of Sensitivity
         </h2>
-        <p className="text-stone-500 text-center mb-10 max-w-xl mx-auto">
+        <p className="text-stone-600 text-center mb-10 max-w-xl mx-auto">
           Every piece of data in your nonprofit maps to one of these tiers.
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -150,11 +159,11 @@ export default function Landing() {
                 <p className="text-stone-700 text-sm leading-relaxed mb-3">
                   {tier.description}
                 </p>
-                <div className="text-xs text-stone-500">
+                <div className="text-xs text-stone-600">
                   <span className="font-semibold">Risk if disclosed:</span>{' '}
                   {tier.riskIfDisclosed}
                 </div>
-                <div className="text-xs text-stone-500 mt-1">
+                <div className="text-xs text-stone-600 mt-1">
                   <span className="font-semibold">Default access:</span>{' '}
                   {tier.accessDefault}
                 </div>
@@ -173,7 +182,7 @@ export default function Landing() {
           <h2 className="text-3xl font-bold text-stone-800 text-center mb-3">
             Get Started
           </h2>
-          <p className="text-stone-500 text-center mb-12 max-w-lg mx-auto">
+          <p className="text-stone-600 text-center mb-12 max-w-lg mx-auto">
             Three ways to put data classification to work at your organization.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -203,7 +212,7 @@ export default function Landing() {
 
       {/* Footer note */}
       <footer className="max-w-5xl mx-auto px-6 py-10 text-center">
-        <p className="text-stone-400 text-sm">
+        <p className="text-stone-600 text-sm">
           Built for nonprofit professionals who want to protect their people and
           their mission. No login required. No data collected.
         </p>

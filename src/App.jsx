@@ -15,8 +15,8 @@ const navLinks = [
   { to: '/guide/handling', label: 'Handling' },
   { to: '/guide/workspace', label: 'Google Workspace' },
   { to: '/guide/m365', label: 'Microsoft 365' },
-  { to: '/decision-tree', label: 'Decision Tree' },
-  { to: '/wizard', label: 'Policy Wizard' },
+  { to: '/decision-tree', label: 'Find Your Tier' },
+  { to: '/wizard', label: 'Build Your Policy' },
 ]
 
 function Nav() {
@@ -28,8 +28,9 @@ function Nav() {
             <span className="text-2xl">🛡️</span>
             <span className="hidden sm:inline">Data Classification Guide</span>
           </Link>
-          <div className="flex items-center gap-1 overflow-x-auto">
-            {navLinks.slice(1).map(link => (
+          <div className="relative flex-1 min-w-0 ml-4">
+            <div className="flex items-center justify-end gap-1 overflow-x-auto">
+              {navLinks.slice(1).map(link => (
               <NavLink
                 key={link.to}
                 to={link.to}
@@ -37,13 +38,16 @@ function Nav() {
                   `px-3 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap no-underline ${
                     isActive
                       ? 'bg-emerald-100 text-emerald-800'
-                      : 'text-stone-500 hover:text-stone-700 hover:bg-stone-100'
+                      : 'text-stone-600 hover:text-stone-700 hover:bg-stone-100'
                   }`
                 }
               >
                 {link.label}
               </NavLink>
-            ))}
+              ))}
+            </div>
+            {/* Scroll affordance: fades the right edge on small screens where the nav overflows */}
+            <div aria-hidden="true" className="lg:hidden pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent" />
           </div>
         </div>
       </div>
@@ -55,17 +59,16 @@ function Footer() {
   return (
     <footer className="bg-stone-50 border-t border-stone-200 py-8 mt-auto">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <p className="text-stone-400 text-sm">
+        <p className="text-stone-600 text-sm">
           A free resource from{' '}
-          <a href="https://nptogether.org" className="text-emerald-600 hover:text-emerald-700 font-medium" target="_blank" rel="noopener noreferrer">
-            Nonprofits Together
-          </a>
-          {' '}&{' '}
-          <a href="https://mtm.now" className="text-emerald-600 hover:text-emerald-700 font-medium" target="_blank" rel="noopener noreferrer">
+          <a href="https://mtm.now" className="text-emerald-700 hover:text-emerald-800 font-medium" target="_blank" rel="noopener noreferrer">
             Meet the Moment
           </a>
         </p>
-        <p className="text-stone-300 text-xs mt-2">
+        <p className="text-stone-600 text-xs mt-2">
+          Runs entirely in your browser — nothing you enter leaves your device.
+        </p>
+        <p className="text-stone-600 text-xs mt-2">
           Based on NIST SP 800-60, CIS Controls v8.1, and nonprofit sector best practices.
           Not legal advice — consult qualified counsel for your specific situation.
         </p>

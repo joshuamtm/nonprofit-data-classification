@@ -7,7 +7,7 @@ const tierInfo = {
     color: 'green',
     bg: 'bg-green-50',
     border: 'border-green-300',
-    badge: 'bg-green-600 text-white',
+    badge: 'bg-green-700 text-white',
     text: 'text-green-800',
     description: 'Information intended for public consumption. No special handling required beyond accuracy.',
     examples: 'Annual reports, press releases, public event details, published research, marketing materials.',
@@ -27,7 +27,7 @@ const tierInfo = {
     color: 'amber',
     bg: 'bg-amber-50',
     border: 'border-amber-300',
-    badge: 'bg-amber-600 text-white',
+    badge: 'bg-amber-700 text-white',
     text: 'text-amber-800',
     description: 'Sensitive information whose disclosure could cause harm to the organization or individuals. Requires access controls and careful handling.',
     examples: 'Donor lists with giving history, employee performance reviews, strategic plans, financial statements, legal correspondence.',
@@ -103,12 +103,12 @@ function ResultCard({ tierId }) {
       <p className={`${tier.text} font-medium text-lg mb-2`}>This data should be classified as {tier.name}.</p>
       <p className="text-stone-600 text-sm leading-relaxed mb-4">{tier.description}</p>
       <div className="mb-4">
-        <p className="text-xs font-semibold text-stone-400 uppercase tracking-wider mb-1">Common examples</p>
-        <p className="text-sm text-stone-500">{tier.examples}</p>
+        <p className="text-xs font-semibold text-stone-600 uppercase tracking-wider mb-1">Common examples</p>
+        <p className="text-sm text-stone-600">{tier.examples}</p>
       </div>
       <Link
         to="/guide/tiers"
-        className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-600 hover:text-emerald-700 no-underline"
+        className="inline-flex items-center gap-1.5 text-sm font-medium text-emerald-700 hover:text-emerald-800 no-underline"
       >
         View full tier details and handling requirements
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -122,7 +122,7 @@ function ResultCard({ tierId }) {
 function AnswerHistoryItem({ question, answer, index }) {
   return (
     <div className="flex items-start gap-3">
-      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-stone-200 text-stone-500 text-xs font-bold flex items-center justify-center mt-0.5">
+      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-stone-200 text-stone-600 text-xs font-bold flex items-center justify-center mt-0.5">
         {index + 1}
       </span>
       <div className="flex-1 min-w-0">
@@ -159,10 +159,10 @@ function FlowchartArrow({ label, direction = 'down' }) {
       <div className="flex flex-col items-center">
         <div className="w-px h-6 bg-stone-300" />
         {label && (
-          <span className="text-xs font-semibold text-stone-400 bg-white px-1.5 -my-1 relative z-10">{label}</span>
+          <span className="text-xs font-semibold text-stone-600 bg-white px-1.5 -my-1 relative z-10">{label}</span>
         )}
         {label && <div className="w-px h-2 bg-stone-300" />}
-        <svg className="w-3 h-3 text-stone-400" viewBox="0 0 12 12" fill="currentColor">
+        <svg className="w-3 h-3 text-stone-600" viewBox="0 0 12 12" fill="currentColor">
           <path d="M6 9L1 4h10z" />
         </svg>
       </div>
@@ -172,10 +172,10 @@ function FlowchartArrow({ label, direction = 'down' }) {
     <div className="flex items-center">
       <div className="h-px w-6 bg-stone-300" />
       {label && (
-        <span className="text-xs font-semibold text-stone-400 bg-white px-1.5 -mx-1 relative z-10">{label}</span>
+        <span className="text-xs font-semibold text-stone-600 bg-white px-1.5 -mx-1 relative z-10">{label}</span>
       )}
       {label && <div className="h-px w-2 bg-stone-300" />}
-      <svg className="w-3 h-3 text-stone-400" viewBox="0 0 12 12" fill="currentColor">
+      <svg className="w-3 h-3 text-stone-600" viewBox="0 0 12 12" fill="currentColor">
         <path d="M9 6L4 1v10z" />
       </svg>
     </div>
@@ -300,7 +300,7 @@ export default function DecisionTree() {
       {/* Header */}
       <div className="mb-10">
         <h1 className="text-3xl font-bold text-stone-800 mb-2">Data Classification Decision Tree</h1>
-        <p className="text-stone-500 text-lg">
+        <p className="text-stone-600 text-lg">
           Answer a few questions about your data to determine the right classification tier.
         </p>
       </div>
@@ -308,7 +308,7 @@ export default function DecisionTree() {
       {/* Interactive Section */}
       <div className="mb-16">
         <h2 className="text-lg font-semibold text-stone-700 mb-4 flex items-center gap-2">
-          <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <svg className="w-5 h-5 text-emerald-700" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
           </svg>
           Interactive Classifier
@@ -338,12 +338,12 @@ export default function DecisionTree() {
             </div>
             <h3 className="text-xl font-semibold text-stone-800 mb-2">{currentQuestion.text}</h3>
             {currentQuestion.helpText && (
-              <p className="text-sm text-stone-400 mb-6 leading-relaxed">{currentQuestion.helpText}</p>
+              <p className="text-sm text-stone-600 mb-6 leading-relaxed">{currentQuestion.helpText}</p>
             )}
             <div className="flex gap-3">
               <button
                 onClick={() => handleAnswer('yes')}
-                className="flex-1 py-3 px-6 bg-white border-2 border-stone-300 hover:border-emerald-500 hover:bg-emerald-50 text-stone-700 hover:text-emerald-700 font-semibold rounded-xl transition-colors cursor-pointer text-sm"
+                className="flex-1 py-3 px-6 bg-white border-2 border-stone-300 hover:border-emerald-500 hover:bg-emerald-50 text-stone-700 hover:text-emerald-800 font-semibold rounded-xl transition-colors cursor-pointer text-sm"
               >
                 Yes
               </button>
@@ -363,7 +363,7 @@ export default function DecisionTree() {
             <ResultCard tierId={result} />
             <button
               onClick={handleReset}
-              className="flex items-center gap-2 text-sm font-medium text-emerald-600 hover:text-emerald-700 cursor-pointer"
+              className="flex items-center gap-2 text-sm font-medium text-emerald-700 hover:text-emerald-800 cursor-pointer"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182" />
@@ -375,7 +375,7 @@ export default function DecisionTree() {
 
         {/* Initial state prompt */}
         {history.length === 0 && !result && (
-          <p className="text-xs text-stone-400 mt-3">
+          <p className="text-xs text-stone-600 mt-3">
             Your answers are not stored. This tool runs entirely in your browser.
           </p>
         )}
@@ -384,18 +384,18 @@ export default function DecisionTree() {
       {/* Static Flowchart Reference */}
       <div>
         <h2 className="text-lg font-semibold text-stone-700 mb-2 flex items-center gap-2">
-          <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+          <svg className="w-5 h-5 text-emerald-700" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25a2.25 2.25 0 01-2.25-2.25v-2.25z" />
           </svg>
           Quick Reference Flowchart
         </h2>
-        <p className="text-sm text-stone-400 mb-6">
+        <p className="text-sm text-stone-600 mb-6">
           A visual overview of the complete classification decision flow.
         </p>
         <div className="bg-stone-50 border border-stone-200 rounded-2xl p-6">
           <StaticFlowchart />
         </div>
-        <p className="text-xs text-stone-400 mt-3 text-center">
+        <p className="text-xs text-stone-600 mt-3 text-center">
           When in doubt, classify at the higher (more restrictive) tier. You can always declassify later.
         </p>
       </div>

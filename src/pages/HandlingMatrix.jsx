@@ -111,7 +111,7 @@ function MobileControlCard({ control, expandedCell, setExpandedCell }) {
     <div className="bg-white rounded-lg border border-stone-200 overflow-hidden">
       <div className="px-4 py-3 border-b border-stone-100">
         <h4 className="text-sm font-semibold text-stone-800">{control.name}</h4>
-        <p className="text-xs text-stone-400 mt-0.5">{control.description}</p>
+        <p className="text-xs text-stone-600 mt-0.5">{control.description}</p>
       </div>
       <div className="divide-y divide-stone-100">
         {tierIds.map(tierId => {
@@ -177,24 +177,35 @@ export default function HandlingMatrix() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-8">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-stone-800 mb-2">
-          Handling Controls Matrix
-        </h1>
-        <p className="text-stone-500 text-lg">
-          Security and handling requirements for each data classification tier.
-          Click any cell to see detailed guidance.
-        </p>
+      <div className="mb-8 flex flex-wrap items-start justify-between gap-4">
+        <div>
+          <h1 className="text-3xl font-bold text-stone-800 mb-2">
+            Handling Controls Matrix
+          </h1>
+          <p className="text-stone-600 text-lg">
+            Security and handling requirements for each data classification tier.
+            Click any cell to see detailed guidance.
+          </p>
+        </div>
+        <button
+          onClick={() => window.print()}
+          className="print:hidden inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-medium border border-stone-300 text-stone-700 hover:bg-stone-50 transition-colors"
+        >
+          <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M6.72 13.829c-.24.03-.48.062-.72.096m.72-.096a42.415 42.415 0 0110.56 0m-10.56 0L6 18.25m10.28-4.421c.24.03.48.062.72.096m-.72-.096L18 18.25m-12 0h12M6 18.25v2.25c0 .414.336.75.75.75h10.5a.75.75 0 00.75-.75v-2.25M6.34 9V4.75A2.25 2.25 0 018.59 2.5h6.82a2.25 2.25 0 012.25 2.25V9" />
+          </svg>
+          Print / Save as PDF
+        </button>
       </div>
 
       <Legend />
 
       {/* Desktop Table */}
-      <div className="hidden lg:block overflow-x-auto">
+      <div className="hidden lg:block print:block overflow-x-auto">
         <table className="w-full border-collapse bg-white rounded-xl border border-stone-200 overflow-hidden">
           <thead>
             <tr>
-              <th className="px-4 py-3 text-left text-xs font-semibold text-stone-500 uppercase tracking-wide bg-stone-50 border-b border-stone-200 w-72">
+              <th className="px-4 py-3 text-left text-xs font-semibold text-stone-600 uppercase tracking-wide bg-stone-50 border-b border-stone-200 w-72">
                 Control
               </th>
               {tierIds.map(id => (
@@ -211,7 +222,7 @@ export default function HandlingMatrix() {
                     colSpan={5}
                     className="px-4 py-2.5 bg-stone-100 border-y border-stone-200"
                   >
-                    <span className="text-xs font-bold text-stone-500 uppercase tracking-wider">
+                    <span className="text-xs font-bold text-stone-600 uppercase tracking-wider">
                       {category}
                     </span>
                   </td>
@@ -220,7 +231,7 @@ export default function HandlingMatrix() {
                   <tr key={control.id} className="border-b border-stone-100 last:border-b-0">
                     <td className="px-4 py-3 align-top">
                       <p className="text-sm font-medium text-stone-800">{control.name}</p>
-                      <p className="text-xs text-stone-400 mt-0.5">{control.description}</p>
+                      <p className="text-xs text-stone-600 mt-0.5">{control.description}</p>
                     </td>
                     {tierIds.map(tierId => (
                       <MatrixCell
@@ -240,10 +251,10 @@ export default function HandlingMatrix() {
       </div>
 
       {/* Mobile Cards */}
-      <div className="lg:hidden space-y-6">
+      <div className="lg:hidden print:hidden space-y-6">
         {categoryOrder.map(category => (
           <div key={category}>
-            <h3 className="text-xs font-bold text-stone-500 uppercase tracking-wider mb-3 px-1">
+            <h3 className="text-xs font-bold text-stone-600 uppercase tracking-wider mb-3 px-1">
               {category}
             </h3>
             <div className="space-y-3">

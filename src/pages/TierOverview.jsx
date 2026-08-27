@@ -7,7 +7,7 @@ const tierStyles = {
   T1: {
     border: 'border-green-300',
     bg: 'bg-green-50',
-    headerBg: 'bg-green-600',
+    headerBg: 'bg-green-700',
     badge: 'bg-green-100 text-green-800',
     dot: 'bg-green-500',
     lightBg: 'bg-green-50',
@@ -23,7 +23,7 @@ const tierStyles = {
   T3: {
     border: 'border-amber-300',
     bg: 'bg-amber-50',
-    headerBg: 'bg-amber-600',
+    headerBg: 'bg-amber-700',
     badge: 'bg-amber-100 text-amber-800',
     dot: 'bg-amber-500',
     lightBg: 'bg-amber-50',
@@ -73,7 +73,7 @@ export default function TierOverview() {
         <div className="max-w-5xl mx-auto px-6 py-16 md:py-20">
           <Link
             to="/"
-            className="inline-flex items-center text-stone-400 hover:text-white text-sm mb-6 transition-colors"
+            className="inline-flex items-center text-stone-600 hover:text-white text-sm mb-6 transition-colors"
           >
             <svg className="w-4 h-4 mr-1" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -121,7 +121,7 @@ export default function TierOverview() {
                   {/* Key Details Grid */}
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
                     <div className={`${styles.lightBg} rounded-lg p-4`}>
-                      <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">
+                      <p className="text-xs font-semibold text-stone-600 uppercase tracking-wide mb-1">
                         Risk if Disclosed
                       </p>
                       <p className="text-stone-800 font-medium">
@@ -129,7 +129,7 @@ export default function TierOverview() {
                       </p>
                     </div>
                     <div className={`${styles.lightBg} rounded-lg p-4`}>
-                      <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">
+                      <p className="text-xs font-semibold text-stone-600 uppercase tracking-wide mb-1">
                         Default Access
                       </p>
                       <p className="text-stone-800 font-medium">
@@ -137,7 +137,7 @@ export default function TierOverview() {
                       </p>
                     </div>
                     <div className={`${styles.lightBg} rounded-lg p-4`}>
-                      <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">
+                      <p className="text-xs font-semibold text-stone-600 uppercase tracking-wide mb-1">
                         Handling Summary
                       </p>
                       <p className="text-stone-700 text-sm leading-relaxed">
@@ -192,7 +192,7 @@ export default function TierOverview() {
           <h2 className="text-2xl font-bold text-stone-800 mb-3">
             Not sure where your data falls?
           </h2>
-          <p className="text-stone-500 mb-8 max-w-md mx-auto">
+          <p className="text-stone-600 mb-8 max-w-md mx-auto">
             Use the decision tree to classify specific data types, or browse
             the full taxonomy by category.
           </p>

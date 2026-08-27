@@ -176,7 +176,7 @@ export default function DataTypeBrowser() {
         <h1 className="text-3xl font-bold text-stone-800 mb-2">
           Data Type Browser
         </h1>
-        <p className="text-stone-500 text-lg">
+        <p className="text-stone-600 text-lg">
           Search and filter {totalAll} data types across {taxonomy.categories.length} categories
           to find classification guidance for your organization's information.
         </p>
@@ -191,7 +191,7 @@ export default function DataTypeBrowser() {
           </label>
           <div className="relative">
             <svg
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-600"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -210,7 +210,7 @@ export default function DataTypeBrowser() {
             {search && (
               <button
                 onClick={() => setSearch('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-stone-600 hover:text-stone-600"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -231,10 +231,9 @@ export default function DataTypeBrowser() {
                 <button
                   key={id}
                   onClick={() => toggleTier(id)}
+                  aria-pressed={active}
                   className={`inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium border-2 transition-all ${
-                    active
-                      ? 'shadow-sm'
-                      : 'opacity-60 hover:opacity-80'
+                    active ? 'shadow-sm' : ''
                   }`}
                   style={{
                     color: t.color,
@@ -277,7 +276,7 @@ export default function DataTypeBrowser() {
         {/* Clear filters */}
         {hasActiveFilters && (
           <div className="flex items-center justify-between pt-2 border-t border-stone-200">
-            <span className="text-sm text-stone-500">
+            <span className="text-sm text-stone-600">
               Showing <span className="font-semibold text-stone-700">{totalResults}</span> of {totalAll} data types
               {filteredCategories.length < taxonomy.categories.length && (
                 <> across <span className="font-semibold text-stone-700">{filteredCategories.length}</span> categories</>
@@ -289,7 +288,7 @@ export default function DataTypeBrowser() {
                 setSelectedCategories([])
                 setSelectedTiers([])
               }}
-              className="text-sm text-emerald-600 hover:text-emerald-700 font-medium"
+              className="text-sm text-emerald-700 hover:text-emerald-800 font-medium"
             >
               Clear all filters
             </button>
@@ -299,7 +298,7 @@ export default function DataTypeBrowser() {
 
       {/* Expand/Collapse All */}
       <div className="flex items-center justify-between mb-4">
-        <p className="text-sm text-stone-500">
+        <p className="text-sm text-stone-600">
           {!hasActiveFilters && (
             <><span className="font-semibold text-stone-700">{totalResults}</span> data types in {filteredCategories.length} categories</>
           )}
@@ -307,13 +306,13 @@ export default function DataTypeBrowser() {
         <div className="flex gap-2">
           <button
             onClick={expandAll}
-            className="text-xs text-stone-500 hover:text-stone-700 font-medium px-2 py-1 rounded hover:bg-stone-100"
+            className="text-xs text-stone-600 hover:text-stone-700 font-medium px-2 py-1 rounded hover:bg-stone-100"
           >
             Expand all
           </button>
           <button
             onClick={collapseAll}
-            className="text-xs text-stone-500 hover:text-stone-700 font-medium px-2 py-1 rounded hover:bg-stone-100"
+            className="text-xs text-stone-600 hover:text-stone-700 font-medium px-2 py-1 rounded hover:bg-stone-100"
           >
             Collapse all
           </button>
@@ -326,8 +325,8 @@ export default function DataTypeBrowser() {
           <svg className="w-12 h-12 mx-auto text-stone-300 mb-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
-          <p className="text-stone-500 text-lg font-medium">No data types match your filters</p>
-          <p className="text-stone-400 text-sm mt-1">Try adjusting your search or filter criteria</p>
+          <p className="text-stone-600 text-lg font-medium">No data types match your filters</p>
+          <p className="text-stone-600 text-sm mt-1">Try adjusting your search or filter criteria</p>
         </div>
       ) : (
         <div className="space-y-3">
@@ -344,9 +343,9 @@ export default function DataTypeBrowser() {
                   <span className="text-xl">{CATEGORY_ICONS[cat.icon] || '📁'}</span>
                   <div className="flex-1 min-w-0">
                     <h2 className="text-base font-semibold text-stone-800">{cat.name}</h2>
-                    <p className="text-sm text-stone-400 truncate">{cat.description}</p>
+                    <p className="text-sm text-stone-600 truncate">{cat.description}</p>
                   </div>
-                  <span className="text-sm font-medium text-stone-400 bg-stone-100 px-2.5 py-1 rounded-full whitespace-nowrap">
+                  <span className="text-sm font-medium text-stone-600 bg-stone-100 px-2.5 py-1 rounded-full whitespace-nowrap">
                     {cat.dataTypes.length} type{cat.dataTypes.length !== 1 ? 's' : ''}
                   </span>
                 </button>
@@ -364,7 +363,7 @@ export default function DataTypeBrowser() {
                         {/* Name and rationale */}
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-medium text-stone-800">{dt.name}</p>
-                          <p className="text-xs text-stone-400 mt-0.5 leading-relaxed">{dt.rationale}</p>
+                          <p className="text-xs text-stone-600 mt-0.5 leading-relaxed">{dt.rationale}</p>
                         </div>
 
                         {/* Badges */}

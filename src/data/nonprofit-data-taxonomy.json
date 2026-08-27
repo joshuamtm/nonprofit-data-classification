@@ -3,7 +3,7 @@
     "T1": {
       "id": "T1",
       "label": "Public",
-      "color": "#16a34a",
+      "color": "#166534",
       "bgColor": "#f0fdf4",
       "borderColor": "#bbf7d0",
       "description": "Information intended for public consumption. No harm if disclosed; may already be published or required to be publicly available.",
@@ -13,7 +13,7 @@
     "T2": {
       "id": "T2",
       "label": "Internal",
-      "color": "#2563eb",
+      "color": "#1e40af",
       "bgColor": "#eff6ff",
       "borderColor": "#bfdbfe",
       "description": "Operational information for staff and authorized volunteers. Low harm if accidentally disclosed, but not intended for public release.",
@@ -23,7 +23,7 @@
     "T3": {
       "id": "T3",
       "label": "Confidential",
-      "color": "#d97706",
+      "color": "#92400e",
       "bgColor": "#fffbeb",
       "borderColor": "#fde68a",
       "description": "Sensitive organizational or personal data. Moderate-to-significant harm if disclosed, including reputational damage, loss of donor trust, or regulatory concern.",
@@ -33,7 +33,7 @@
     "T4": {
       "id": "T4",
       "label": "Restricted",
-      "color": "#dc2626",
+      "color": "#991b1b",
       "bgColor": "#fef2f2",
       "borderColor": "#fecaca",
       "description": "Highest sensitivity data. Disclosure could cause severe harm including legal liability, regulatory penalties, threat to personal safety, or identity theft.",

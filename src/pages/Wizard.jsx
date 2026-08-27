@@ -1,6 +1,5 @@
 import { useState, useMemo, useCallback } from 'react'
 import taxonomy from '../data/nonprofit-data-taxonomy.json'
-import { generatePolicy } from '../lib/generatePolicy'
 
 /* ─── Constants ──────────────────────────────────────────────────────── */
 
@@ -237,6 +236,8 @@ export default function Wizard() {
   const handleGenerate = async () => {
     setGenerating(true)
     try {
+      // Lazy-load the docx generator so the heavy library stays out of the main bundle
+      const { generatePolicy } = await import('../lib/generatePolicy')
       await generatePolicy(state)
       setGenerated(true)
     } catch (err) {
@@ -255,7 +256,7 @@ export default function Wizard() {
         <h1 className="text-3xl font-bold text-stone-800">
           Data Classification Policy Wizard
         </h1>
-        <p className="text-stone-500 mt-2">
+        <p className="text-stone-600 mt-2">
           Answer a few questions and generate a customized data classification
           policy for your nonprofit.
         </p>
@@ -309,10 +310,10 @@ export default function Wizard() {
         {step < 6 ? (
           <div className="flex items-center gap-3">
             {!canAdvance && step === 1 && (
-              <span className="text-xs text-stone-400">Fill in organization name and staff size to continue</span>
+              <span className="text-xs text-stone-600">Fill in organization name and staff size to continue</span>
             )}
             {!canAdvance && step === 2 && (
-              <span className="text-xs text-stone-400">Select a platform to continue</span>
+              <span className="text-xs text-stone-600">Select a platform to continue</span>
             )}
             <button
               onClick={() => goToStep(step + 1)}
@@ -347,7 +348,7 @@ function ProgressBar({ current, steps, onStepClick }) {
                 ? 'bg-emerald-700 text-white shadow-md'
                 : isComplete
                   ? 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
-                  : 'bg-stone-100 text-stone-400 cursor-default'
+                  : 'bg-stone-100 text-stone-600 cursor-default'
             }`}
             disabled={s.id > current}
           >
@@ -369,17 +370,18 @@ function StepOrganization({ state, update, toggleSector }) {
         <h2 className="text-xl font-semibold text-stone-800 mb-1">
           Organization Basics
         </h2>
-        <p className="text-sm text-stone-500">
+        <p className="text-sm text-stone-600">
           Tell us about your organization so we can tailor the policy.
         </p>
       </div>
 
       {/* Org name */}
       <div>
-        <label className="block text-sm font-medium text-stone-700 mb-1">
+        <label htmlFor="wiz-org-name" className="block text-sm font-medium text-stone-700 mb-1">
           Organization Name <span className="text-red-500">*</span>
         </label>
         <input
+          id="wiz-org-name"
           type="text"
           value={state.orgName}
           onChange={(e) => update('orgName', e.target.value)}
@@ -390,10 +392,11 @@ function StepOrganization({ state, update, toggleSector }) {
 
       {/* Staff size */}
       <div>
-        <label className="block text-sm font-medium text-stone-700 mb-1">
+        <label htmlFor="wiz-staff-size" className="block text-sm font-medium text-stone-700 mb-1">
           Staff Size <span className="text-red-500">*</span>
         </label>
         <select
+          id="wiz-staff-size"
           value={state.staffSize}
           onChange={(e) => update('staffSize', e.target.value)}
           className="w-full px-4 py-2.5 border border-stone-300 rounded-lg text-stone-800 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 bg-white"
@@ -435,24 +438,25 @@ function StepOrganization({ state, update, toggleSector }) {
             )
           })}
         </div>
-        <p className="text-xs text-stone-400 mt-1">
+        <p className="text-xs text-stone-600 mt-1">
           "General / Human Services" data types are always included.
         </p>
       </div>
 
       {/* Primary state */}
       <div>
-        <label className="block text-sm font-medium text-stone-700 mb-1">
+        <label htmlFor="wiz-primary-state" className="block text-sm font-medium text-stone-700 mb-1">
           Primary State of Operation
         </label>
         <input
+          id="wiz-primary-state"
           type="text"
           value={state.primaryState}
           onChange={(e) => update('primaryState', e.target.value)}
           placeholder="e.g., New York"
           className="w-full px-4 py-2.5 border border-stone-300 rounded-lg text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500"
         />
-        <p className="text-xs text-stone-400 mt-1">
+        <p className="text-xs text-stone-600 mt-1">
           Used for state-specific privacy law guidance in your policy.
         </p>
       </div>
@@ -469,7 +473,7 @@ function StepPlatform({ state, update }) {
         <h2 className="text-xl font-semibold text-stone-800 mb-1">
           Workspace Platform
         </h2>
-        <p className="text-sm text-stone-500">
+        <p className="text-sm text-stone-600">
           Your platform determines which security controls are available to you.
         </p>
       </div>
@@ -555,7 +559,7 @@ function StepDataInventory({ state, toggleDataType, tierCounts }) {
         <h2 className="text-xl font-semibold text-stone-800 mb-1">
           Data Inventory
         </h2>
-        <p className="text-sm text-stone-500">
+        <p className="text-sm text-stone-600">
           Select the data types your organization handles. We have pre-selected
           common types based on your sector.
         </p>
@@ -597,7 +601,7 @@ function StepDataInventory({ state, toggleDataType, tierCounts }) {
               >
                 <div className="flex items-center gap-2">
                   <svg
-                    className={`w-4 h-4 text-stone-400 transition-transform ${
+                    className={`w-4 h-4 text-stone-600 transition-transform ${
                       isExpanded ? 'rotate-90' : ''
                     }`}
                     fill="none"
@@ -615,7 +619,7 @@ function StepDataInventory({ state, toggleDataType, tierCounts }) {
                     {category.name}
                   </span>
                 </div>
-                <span className="text-xs text-stone-500 bg-white px-2 py-0.5 rounded border border-stone-200">
+                <span className="text-xs text-stone-600 bg-white px-2 py-0.5 rounded border border-stone-200">
                   {catSelectedCount} / {category.dataTypes.length}
                 </span>
               </button>
@@ -694,7 +698,7 @@ function StepRegulations({ detectedRegulations, additionalRegulations, update })
         <h2 className="text-xl font-semibold text-stone-800 mb-1">
           Regulatory Check
         </h2>
-        <p className="text-sm text-stone-500">
+        <p className="text-sm text-stone-600">
           Based on your selected data types, here are the regulations that may
           apply to your organization.
         </p>
@@ -706,7 +710,7 @@ function StepRegulations({ detectedRegulations, additionalRegulations, update })
             No specific regulatory requirements detected beyond general best
             practices.
           </p>
-          <p className="text-xs text-green-600 mt-1">
+          <p className="text-xs text-green-700 mt-1">
             This does not mean you have no compliance obligations. Consult
             qualified counsel for your specific situation.
           </p>
@@ -730,7 +734,7 @@ function StepRegulations({ detectedRegulations, additionalRegulations, update })
                   {info.description}
                 </p>
                 <div className="mt-3">
-                  <p className="text-xs font-medium text-stone-500 mb-1">
+                  <p className="text-xs font-medium text-stone-600 mb-1">
                     Triggered by your data types:
                   </p>
                   <div className="flex flex-wrap gap-1">
@@ -781,7 +785,7 @@ function StepRegulations({ detectedRegulations, additionalRegulations, update })
                 {reg}
                 <button
                   onClick={() => removeManualRegulation(reg)}
-                  className="text-stone-400 hover:text-stone-600 ml-1"
+                  className="text-stone-600 hover:text-stone-600 ml-1"
                 >
                   x
                 </button>
@@ -819,7 +823,7 @@ function StepReview({ state, tierCounts, detectedRegulations, goToStep }) {
         <h2 className="text-xl font-semibold text-stone-800 mb-1">
           Review Your Selections
         </h2>
-        <p className="text-sm text-stone-500">
+        <p className="text-sm text-stone-600">
           Confirm everything looks correct before generating your policy.
         </p>
       </div>
@@ -882,7 +886,7 @@ function StepReview({ state, tierCounts, detectedRegulations, goToStep }) {
       {/* Regulations */}
       <ReviewSection title="Applicable Regulations" onEdit={() => goToStep(4)}>
         {allRegulations.length === 0 ? (
-          <p className="text-sm text-stone-500">
+          <p className="text-sm text-stone-600">
             No specific regulations detected.
           </p>
         ) : (
@@ -934,7 +938,7 @@ function ReviewSection({ title, onEdit, children }) {
 function ReviewRow({ label, value }) {
   return (
     <div className="flex gap-2 text-sm">
-      <span className="text-stone-500 min-w-[100px]">{label}:</span>
+      <span className="text-stone-600 min-w-[100px]">{label}:</span>
       <span className="text-stone-800 font-medium">{value}</span>
     </div>
   )
@@ -965,7 +969,7 @@ function StepGenerate({ generating, generated, onGenerate, platform }) {
           <h2 className="text-xl font-semibold text-stone-800">
             Your policy has been downloaded!
           </h2>
-          <p className="text-sm text-stone-500 mt-1">
+          <p className="text-sm text-stone-600 mt-1">
             Check your downloads folder for the Word document.
           </p>
         </div>
@@ -1017,7 +1021,7 @@ function StepGenerate({ generating, generated, onGenerate, platform }) {
         <h2 className="text-xl font-semibold text-stone-800 mb-1">
           Generate Your Policy
         </h2>
-        <p className="text-sm text-stone-500">
+        <p className="text-sm text-stone-600">
           We will generate a comprehensive Word document tailored to your
           organization.
         </p>
